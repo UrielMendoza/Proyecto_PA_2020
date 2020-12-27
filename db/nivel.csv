@@ -1,0 +1,6 @@
+id_nivel,nombreNivel,gradoAcademico
+1,basico,licenciatura
+2,intermedio,maestria
+3,avanzado,doctorado
+4,investigador,postdoctorado
+5,emerito,postdoctorado
