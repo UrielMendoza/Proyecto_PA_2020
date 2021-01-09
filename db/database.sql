@@ -133,35 +133,35 @@ ALTER TABLE profesores ADD FOREIGN KEY(id_nivel1) REFERENCES nivel(id_nivel);
 ALTER TABLE materiasHorarios ADD FOREIGN KEY(id_materia1) REFERENCES materias(id_materia);
 
 -- Importar valores csv
-LOAD DATA INFILE 'D:/Documentos/MCIC/Materias/Programacion_Avanzada/Proyecto/salones.csv' 
+LOAD DATA INFILE './salones.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/Documentos/MCIC/Materias/Programacion_Avanzada/Proyecto/nivel.csv' 
+LOAD DATA INFILE './nivel.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/Documentos/MCIC/Materias/Programacion_Avanzada/Proyecto/profesores.csv' 
+LOAD DATA INFILE './profesores.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/Documentos/MCIC/Materias/Programacion_Avanzada/Proyecto/materias.csv' 
+LOAD DATA INFILE './materias.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/Documentos/MCIC/Materias/Programacion_Avanzada/Proyecto/materiasHorarios.csv' 
+LOAD DATA INFILE './materiasHorarios.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
