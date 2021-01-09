@@ -168,9 +168,3 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/Documentos/MCIC/Materias/Programacion_Avanzada/Proyecto/profesoresMaterias.csv' 
-INTO TABLE salones 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
