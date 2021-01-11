@@ -1,17 +1,14 @@
 id_materia,nombreMateria,descripcion,laboratorio,
-1,biologia,Ciencia que estudia la estructura de los seres vivos y de sus procesos vitales.,si,
-2,quimica,Ciencia que estudia la composición y las propiedades de la materia y de las transformaciones que esta experimenta sin que se alteren los elementos que la forman.,si,
-3,fisica,"Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales, excluyendo los que modifican la estructura molecular de los cuerpos.",si,
-4,matematicas,Ciencia que estudia las propiedades de los números y las relaciones que se establecen entre ellos.,no,
-5,geografia,"Ciencia que estudia y describe la superficie de la Tierra en su aspecto físico, actual y natural, o como lugar habitado por la humanidad.",no,
-6,redaccion,La redacción es una forma de edición en la que se combinan (redactan) múltiples fuentes de textos y se modifican ligeramente para crear un solo documento.,no,
-7,historia,"La historia es la ciencia que tiene como objetivo el estudio de sucesos del pasado, tradicionalmente de la humanidad?, y como método, el propio de las ciencias sociales/humanas, así como el de las ciencias naturales en un marco de interdisciplinariedad.",no,
-8,edu. fisica,"La enseñanza de la educación física consiste en un conjunto de estrategias didácticas que promueven el acondicionamiento físico con actividades que ejercitan las destrezas motoras como el equilibrio, la flexibilidad, la velocidad, la resistencia y la fuerza.",no,
-9,civismo,"El civismo (del latín civis, ciudadano y civitas, civitatis, ciudad) o urbanidad se refiere a las pautas mínimas de comportamiento social que nos permiten convivir.",no,
-10,computacion,"La computación es la ciencia encargada de estudiar los sistemas, más precisamente computadoras, que automáticamente gestionan información. ",si,
-11,ingles,"El inglés es un idioma que tiene casi el doble de hablantes como segunda lengua, lo cual nos puede dar una idea de su gran importancia.",no,
-12,literatura,Teoría de la composición de las obras escritas en prosa o verso.,no,
-13,filosofia,"Conjunto de reflexiones sobre la esencia, las propiedades, las causas y los efectos de las cosas naturales, especialmente sobre el hombre y el universo.",no,
-,,,,
-,,,,
-,,,,
+1,biologia,Ciencia que estudia la estructura de los seres vivos y de sus procesos vitales.,1
+2,quimica,Ciencia que estudia la composición y las propiedades de la materia y de las transformaciones que esta experimenta sin que se alteren los elementos que la forman.,1
+3,fisica,"Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales, excluyendo los que modifican la estructura molecular de los cuerpos.",1
+4,matematicas,Ciencia que estudia las propiedades de los números y las relaciones que se establecen entre ellos.,0
+5,geografia,"Ciencia que estudia y describe la superficie de la Tierra en su aspecto físico, actual y natural, o como lugar habitado por la humanidad.",0
+6,redaccion,La redacción es una forma de edición en la que se combinan (redactan) múltiples fuentes de textos y se modifican ligeramente para crear un solo documento.,0
+7,historia,"La historia es la ciencia que tiene como objetivo el estudio de sucesos del pasado, tradicionalmente de la humanidad?, y como método, el propio de las ciencias sociales/humanas, así como el de las ciencias naturales en un marco de interdisciplinariedad.",0
+8,edu. fisica,"La enseñanza de la educación física consiste en un conjunto de estrategias didácticas que promueven el acondicionamiento físico con actividades que ejercitan las destrezas motoras como el equilibrio, la flexibilidad, la velocidad, la resistencia y la fuerza.",0
+9,civismo,"El civismo (del latín civis, ciudadano y civitas, civitatis, ciudad) o urbanidad se refiere a las pautas mínimas de comportamiento social que nos permiten convivir.",0
+10,computacion,"La computación es la ciencia encargada de estudiar los sistemas, más precisamente computadoras, que automáticamente gestionan información. ",1
+11,ingles,"El inglés es un idioma que tiene casi el doble de hablantes como segunda lengua, lo cual nos puede dar una idea de su gran importancia.",0,
+12,literatura,Teoría de la composición de las obras escritas en prosa o verso.,0
+13,filosofia,"Conjunto de reflexiones sobre la esencia, las propiedades, las causas y los efectos de las cosas naturales, especialmente sobre el hombre y el universo.",0
