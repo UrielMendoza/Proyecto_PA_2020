@@ -23,16 +23,23 @@ public class AlumnoMaterias implements Serializable {
     @Column(name="id_alumnoMaterias")
     private Integer idAlumnoMaterias;
     
+    @JoinColumn(name="id_numCuenta1",referencedColumnName="id_numCuenta")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Alumnos alumno;
+    
+    @JoinColumn(name="id_materiasHorarios1",referencedColumnName="id_materiasHorarios")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private MateriasHorarios materiaHorario;
+    
     @Column(name="calificacion")
     private float calificacion;
 
     @Override
     public String toString() {
-        return "AlumnoMaterias{" + "idAlumnoMaterias=" + idAlumnoMaterias + ", calificacion=" + calificacion + '}';
+        return "AlumnoMaterias{" + "idAlumnoMaterias=" + idAlumnoMaterias + ", alumno=" + alumno + ", materiaHorario=" + materiaHorario + ", calificacion=" + calificacion + '}';
     }
 
-    
-    
+   
     public AlumnoMaterias() {
     }
 
@@ -55,6 +62,24 @@ public class AlumnoMaterias implements Serializable {
     public void setCalificacion(float calificacion) {
         this.calificacion = calificacion;
     }
+
+    public Alumnos getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(Alumnos alumno) {
+        this.alumno = alumno;
+    }
+
+    public MateriasHorarios getMateriaHorario() {
+        return materiaHorario;
+    }
+
+    public void setMateriaHorario(MateriasHorarios materiaHorario) {
+        this.materiaHorario = materiaHorario;
+    }
+    
+    
 
     @Override
     public int hashCode() {

@@ -32,6 +32,13 @@ public class Salones implements Serializable {
     
     private int cupo;
 
+    @Override
+    public String toString() {
+        return "Salones{" + "idSalon=" + idSalon + ", edificio=" + edificio + ", laboratorio=" + laboratorio + ", cupo=" + cupo + '}';
+    }
+    
+   
+
     public Salones() {
     }
 
@@ -94,6 +101,9 @@ public class Salones implements Serializable {
             return false;
         }
         return true;
+        
+        
+        
     }
     
     

@@ -14,16 +14,16 @@ import java.util.*;
 import javax.persistence.*;
 import mx.com.gm.domain.*;
 
-public class GrupoSalonDAO extends GenericDAO {
+public class GruposSalonDAO extends GenericDAO {
 
-    public List<GrupoSalon> listar() {
-        String consulta = "SELECT a FROM GrupoSalon a";
+    public List<GruposSalon> listar() {
+        String consulta = "SELECT a FROM GruposSalon a";
         em = getEntityManager();
         Query query = em.createQuery(consulta);
         return query.getResultList();
     }
 
-    public void insertar(GrupoSalon grupoSalon) {
+    public void insertar(GruposSalon grupoSalon) {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -39,7 +39,7 @@ public class GrupoSalonDAO extends GenericDAO {
 //        }
     }
     
-    public void actualizar(GrupoSalon alumno) {
+    public void actualizar(GruposSalon alumno) {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -55,7 +55,7 @@ public class GrupoSalonDAO extends GenericDAO {
 //        }
     }
     
-    public void eliminar(GrupoSalon alumno) {
+    public void eliminar(GruposSalon alumno) {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -71,9 +71,9 @@ public class GrupoSalonDAO extends GenericDAO {
 //        }
     }
     
-    public GrupoSalon buscarPorId(GrupoSalon alumno){
+    public GruposSalon buscarPorId(GruposSalon alumno){
     em=getEntityManager();
-    return em.find(GrupoSalon.class, alumno.getIdGrupoSalon());
+    return em.find(GruposSalon.class, alumno.getIdGruposSalon());
     }
 }
 

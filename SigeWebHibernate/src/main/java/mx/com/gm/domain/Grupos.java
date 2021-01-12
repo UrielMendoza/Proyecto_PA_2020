@@ -29,11 +29,14 @@ public class Grupos implements Serializable {
     @Column(name="id_grupo")
     private Integer idGrupos;
     
-    
-    
-    
-    
     private int grado;
+
+    @Override
+    public String toString() {
+        return "Grupos{" + "idGrupos=" + idGrupos + ", grado=" + grado + '}';
+    }
+    
+    
 
     public Grupos() {
     }

@@ -24,9 +24,25 @@ public class Asistencias implements Serializable {
     @Column(name="id_asistencia")
     private Integer idAsistencias;
     
+    @JoinColumn(name="id_numCuenta2",referencedColumnName="id_numCuenta")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Alumnos alumno;
+    
+    @JoinColumn(name="id_materiasHorarios2",referencedColumnName="id_materiasHorarios")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private MateriasHorarios materiasHorarios;
+    
     @Column(name="fecha")
-    @Type(type="timestamp")
-    private Date fecha;
+    private String fecha;
+    
+    private int asistencia;
+
+    @Override
+    public String toString() {
+        return "Asistencias{" + "idAsistencias=" + idAsistencias + ", fecha=" + fecha + ", asistencia=" + asistencia + '}';
+    }
+    
+    
 
     public Asistencias() {
     }
@@ -43,13 +59,7 @@ public class Asistencias implements Serializable {
         this.idAsistencias = idAsistencias;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
+    
 
     @Override
     public int hashCode() {

@@ -27,6 +27,13 @@ public class Nivel implements Serializable {
     
     private String gradoAcademico;
 
+    @Override
+    public String toString() {
+        return "Nivel{" + "idNivel=" + idNivel + ", nombreNivel=" + nombreNivel + ", gradoAcademico=" + gradoAcademico + '}';
+    }
+
+    
+    
     public Nivel() {
     }
 

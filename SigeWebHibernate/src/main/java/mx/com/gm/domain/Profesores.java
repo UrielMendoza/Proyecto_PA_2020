@@ -7,11 +7,14 @@ package mx.com.gm.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -32,8 +35,27 @@ public class Profesores implements Serializable {
     
     private String sexoProf;
     
-    private int edadProf;
+    @Column(name="fechaNacProf")
+    private String fechaNac;
+    
+    @JoinColumn(name="id_nivel1",referencedColumnName="id_nivel")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Nivel nivel;
+    
+    private String direccionProf;
+    
+    private int cpProf;
+    
+    private String telefonoProf;
+    
+    private String correoProf;
 
+    @Override
+    public String toString() {
+        return "Profesores{" + "idProf=" + idProf + ", nombreProf=" + nombreProf + ", apellidoProf=" + apellidoProf + ", sexoProf=" + sexoProf + ", fechaNac=" + fechaNac + ", nivel=" + nivel + ", direccionProf=" + direccionProf + ", cpProf=" + cpProf + ", telefonoProf=" + telefonoProf + ", correoProf=" + correoProf + '}';
+    }
+
+    
     public Profesores() {
     }
 
@@ -73,13 +95,55 @@ public class Profesores implements Serializable {
         this.sexoProf = sexoProf;
     }
 
-    public int getEdadProf() {
-        return edadProf;
+    public String getFechaNac() {
+        return fechaNac;
     }
 
-    public void setEdadProf(int edadProf) {
-        this.edadProf = edadProf;
+    public void setFechaNac(String fechaNac) {
+        this.fechaNac = fechaNac;
     }
+
+    public String getDireccionProf() {
+        return direccionProf;
+    }
+
+    public void setDireccionProf(String direccionProf) {
+        this.direccionProf = direccionProf;
+    }
+
+    public int getCpProf() {
+        return cpProf;
+    }
+
+    public void setCpProf(int cpProf) {
+        this.cpProf = cpProf;
+    }
+
+    public String getTelefonoProf() {
+        return telefonoProf;
+    }
+
+    public void setTelefonoProf(String telefonoProf) {
+        this.telefonoProf = telefonoProf;
+    }
+
+    public String getCorreoProf() {
+        return correoProf;
+    }
+
+    public void setCorreoProf(String correoProf) {
+        this.correoProf = correoProf;
+    }
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
+    }
+
+   
 
     @Override
     public int hashCode() {

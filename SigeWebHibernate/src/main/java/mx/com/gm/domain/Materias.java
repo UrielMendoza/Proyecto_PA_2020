@@ -26,9 +26,18 @@ public class Materias implements Serializable {
     @Column(name="id_materia")
     private Integer idMateria;
     
+    @Column(name="nombreMateria")
+    private String nombre;
+    
     private String descripcion;
     
     private String laboratorio;
+
+    @Override
+    public String toString() {
+        return "Materias{" + "idMateria=" + idMateria + ", nombre=" + nombre + ", descripcion=" + descripcion + ", laboratorio=" + laboratorio + '}';
+    }
+
 
     public Materias() {
     }
@@ -61,6 +70,16 @@ public class Materias implements Serializable {
         this.laboratorio = laboratorio;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;

@@ -23,10 +23,32 @@ public class MateriasHorarios implements Serializable {
     @Column(name="id_materiasHorarios")
     private Integer idMateriasHorarios;
     
+    @JoinColumn(name="id_materia1",referencedColumnName="id_materia")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Materias materia;
+    
     private String horario;
     
     private String dias;
+    
+    @JoinColumn(name="id_numCuentaProf1",referencedColumnName="id_numCuentaProf")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Profesores profesor;
+    
+    @JoinColumn(name="id_grupo2",referencedColumnName="id_grupo")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Grupos grupo;
+    
+    @JoinColumn(name="id_salon1",referencedColumnName="id_salon")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Salones salon;
 
+    @Override
+    public String toString() {
+        return "MateriasHorarios{" + "idMateriasHorarios=" + idMateriasHorarios + ", materia=" + materia + ", horario=" + horario + ", dias=" + dias + ", profesor=" + profesor + ", grupo=" + grupo + ", salon=" + salon + '}';
+    }
+
+  
     public MateriasHorarios() {
     }
 
@@ -58,6 +80,40 @@ public class MateriasHorarios implements Serializable {
         this.dias = dias;
     }
 
+    public Materias getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materias materia) {
+        this.materia = materia;
+    }
+
+    public Profesores getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Profesores profesor) {
+        this.profesor = profesor;
+    }
+
+    public Grupos getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupos grupo) {
+        this.grupo = grupo;
+    }
+
+    public Salones getSalon() {
+        return salon;
+    }
+
+    public void setSalon(Salones salon) {
+        this.salon = salon;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

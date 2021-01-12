@@ -7,44 +7,51 @@ package mx.com.gm.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  *
  * @author jorge
  */
 @Entity
-public class GrupoSalon implements Serializable {
+public class GruposSalon implements Serializable {
     private static final long serialVersionUID=1L;
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_gruposSalon")
-    private Integer idGrupoSalon;
+    private Integer idGruposSalon;
+    
+    @JoinColumn(name="id_salon1",referencedColumnName="id_salon")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Salones salones;
 
-    public GrupoSalon() {
+    @Override
+    public String toString() {
+        return "GruposSalon{" + "idGruposSalon=" + idGruposSalon + ", salones=" + salones + '}';
+    }
+    
+    
+
+    public GruposSalon() {
     }
 
-    public GrupoSalon(Integer idGrupoSalon) {
-        this.idGrupoSalon = idGrupoSalon;
+    public GruposSalon(Integer idGruposSalon) {
+        this.idGruposSalon = idGruposSalon;
     }
 
-    public Integer getIdGrupoSalon() {
-        return idGrupoSalon;
+    public Integer getIdGruposSalon() {
+        return idGruposSalon;
     }
 
-    public void setIdGrupoSalon(Integer idGrupoSalon) {
-        this.idGrupoSalon = idGrupoSalon;
+    public void setIdGruposSalon(Integer idGruposSalon) {
+        this.idGruposSalon = idGruposSalon;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.idGrupoSalon);
+        hash = 53 * hash + Objects.hashCode(this.idGruposSalon);
         return hash;
     }
 
@@ -59,8 +66,8 @@ public class GrupoSalon implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final GrupoSalon other = (GrupoSalon) obj;
-        if (!Objects.equals(this.idGrupoSalon, other.idGrupoSalon)) {
+        final GruposSalon other = (GruposSalon) obj;
+        if (!Objects.equals(this.idGruposSalon, other.idGruposSalon)) {
             return false;
         }
         return true;

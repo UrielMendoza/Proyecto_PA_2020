@@ -26,42 +26,52 @@ public class Alumnos implements Serializable {
 //    
    
     
-//   @JoinColumn(name="id_grupo1",referencedColumnName="id_grupo")
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    private Grupos grupo;
-//   
-//   @OneToMany(mappedBy="alumnos")
-//    private List<Asistencias> asistencias;
-//   
-//   @OneToMany(mappedBy="alumnos")
-//    private List<AlumnoMaterias> alumnoMaterias;
-    
     private String nombre;
     
     private String apellido;
     
     private String sexo;
     
-    private int edad;
+    @Column(name="fechaNacAlum")
+    private String fechaNac;
     
     private float promedio;
+    
+    @JoinColumn(name="id_grupo1",referencedColumnName="id_grupo")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Grupos grupo;
     
     private String estatus;
     
     private int generacion;
+    
+    private String direccion;
+    
+    private int cp;
+    
+    private String telefono;
+    
+    private String correo;
 
-    @JoinColumn(name="id_contacto",referencedColumnName="id_contacto")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Contacto contacto;
+
+//    @JoinColumn(name="id_contacto",referencedColumnName="id_contacto")
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    private Contacto contacto;
+//    
+//    @JoinColumn(name="id_grupo1",referencedColumnName="id_grupo")
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    private Grupos grupo;
+   
+//   @OneToMany(mappedBy="alumnos")
+//    private List<Asistencias> asistencias;
+   
+////   @OneToMany(mappedBy="alumnos")
+////    private List<AlumnoMaterias> alumnoMaterias;
 
     @Override
     public String toString() {
-        return "Alumnos{" + "idAlumno=" + idAlumno + ", nombre=" + nombre + ", apellido=" + apellido + ", sexo=" + sexo + ", edad=" + edad + ", promedio=" + promedio + ", estatus=" + estatus + ", generacion=" + generacion + ", contacto=" + contacto + '}';
+        return "Alumnos{" + "idAlumno=" + idAlumno + ", nombre=" + nombre + ", apellido=" + apellido + ", sexo=" + sexo + ", fechaNac=" + fechaNac + ", promedio=" + promedio + ", grupo=" + grupo + ", estatus=" + estatus + ", generacion=" + generacion + ", direccion=" + direccion + ", cp=" + cp + ", telefono=" + telefono + ", correo=" + correo + '}';
     }
-    
-    
-    
-    
 
     public Alumnos() {
     }
@@ -77,6 +87,17 @@ public class Alumnos implements Serializable {
     public void setIdAlumno(Integer idAlumno) {
         this.idAlumno = idAlumno;
     }
+
+    public Grupos getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupos grupo) {
+        this.grupo = grupo;
+    }
+    
+    
+    
 
 //    public List<AlumnoMaterias> getAlumnoMaterias() {
 //        return alumnoMaterias;
@@ -112,8 +133,6 @@ public class Alumnos implements Serializable {
 //        this.asistencias = asistencias;
 //    }
 
-    
-    
     public String getNombre() {
         return nombre;
     }
@@ -138,12 +157,12 @@ public class Alumnos implements Serializable {
         this.sexo = sexo;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getFechaNac() {
+        return fechaNac;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setFechaNac(String fechaNac) {
+        this.fechaNac = fechaNac;
     }
 
     public float getPromedio() {
@@ -170,10 +189,42 @@ public class Alumnos implements Serializable {
         this.generacion = generacion;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getCp() {
+        return cp;
+    }
+
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.idAlumno);
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.idAlumno);
         return hash;
     }
 
@@ -194,6 +245,10 @@ public class Alumnos implements Serializable {
         }
         return true;
     }
+
+    
+    
+    
 
   
     
