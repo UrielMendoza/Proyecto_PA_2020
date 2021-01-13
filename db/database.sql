@@ -108,63 +108,63 @@ ALTER TABLE materiasHorarios ADD FOREIGN KEY(id_salon1) REFERENCES salones(id_sa
 
 
 -- Importar valores csv
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/salones.csv' 
+LOAD DATA INFILE 'C:/Users/José Antonio Jiménez/Documents/itHub/Proyecto_PA_2020/db/salones.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/nivel.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\nivel.csv' 
 INTO TABLE nivel 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/materias.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\materias.csv' 
 INTO TABLE materias 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/grupos.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\grupos.csv' 
 INTO TABLE grupos 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/profesores.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\profesores.csv' 
 INTO TABLE profesores 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/alumnos.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\alumnos.csv' 
 INTO TABLE alumnos 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/materiasHorarios.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\dbmateriasHorarios.csv' 
 INTO TABLE materiasHorarios 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/alumnosMaterias.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\alumnosMaterias.csv' 
 INTO TABLE alumnoMaterias 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/uriel/Documents/GitHub/Proyecto_PA_2020/db/asistencias.csv' 
+LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\asistencias.csv' 
 INTO TABLE asistencias 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
