@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan( basePackages = {"mx.com.gm"} )
+@ComponentScan( basePackages = {"mx.unam.pa.sige"} )
 public class HibernateConfig {
 	@Autowired
     private ApplicationContext context;

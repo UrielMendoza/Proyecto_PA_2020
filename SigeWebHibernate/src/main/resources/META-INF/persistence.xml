@@ -3,19 +3,19 @@
     <!-- Define Persistence Unit -->
     <persistence-unit name="HibernateJpaPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>mx.com.gm.domain.AlumnoMaterias</class>
-        <class>mx.com.gm.domain.Alumnos</class>
-        <class>mx.com.gm.domain.Asistencias</class>
-        <class>mx.com.gm.domain.Contacto</class>
-        <class>mx.com.gm.domain.GrupoSalon</class>
-        <class>mx.com.gm.domain.Grupos</class>
-        <class>mx.com.gm.domain.Materias</class>
-        <class>mx.com.gm.domain.MateriasGrupo</class>
-        <class>mx.com.gm.domain.MateriasHorarios</class>
-        <class>mx.com.gm.domain.Nivel</class>
-        <class>mx.com.gm.domain.Profesores</class>
-        <class>mx.com.gm.domain.ProfesoresMaterias</class>
-        <class>mx.com.gm.domain.Salones</class>
+        <class>mx.unam.pa.sige.domain.AlumnoMaterias</class>
+        <class>mx.unam.pa.sige.domain.Alumnos</class>
+        <class>mx.unam.pa.sige.domain.Asistencias</class>
+        <class>mx.unam.pa.sige.domain.Contacto</class>
+        <class>mx.unam.pa.sige.domain.GrupoSalon</class>
+        <class>mx.unam.pa.sige.domain.Grupos</class>
+        <class>mx.unam.pa.sige.domain.Materias</class>
+        <class>mx.unam.pa.sige.domain.MateriasGrupo</class>
+        <class>mx.unam.pa.sige.domain.MateriasHorarios</class>
+        <class>mx.unam.pa.sige.domain.Nivel</class>
+        <class>mx.unam.pa.sige.domain.Profesores</class>
+        <class>mx.unam.pa.sige.domain.ProfesoresMaterias</class>
+        <class>mx.unam.pa.sige.domain.Salones</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/escuela?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/>
             <property name="javax.persistence.jdbc.user" value="root"/>

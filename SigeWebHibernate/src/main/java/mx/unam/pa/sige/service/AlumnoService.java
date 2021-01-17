@@ -10,7 +10,7 @@ public interface AlumnoService {
 	/**
 	 * Inserción de un POJO {@link Autor} en la base de 
 	 * datos
-	 * @param autor
+	 * @param alumno
 	 */
 	public void guardar(Alumnos alumno);
 }

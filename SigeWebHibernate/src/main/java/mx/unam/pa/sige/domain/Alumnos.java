@@ -23,8 +23,6 @@ public class Alumnos implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_numCuenta")
     private Integer idAlumno;
-//    
-   
     
     private String nombre;
     
