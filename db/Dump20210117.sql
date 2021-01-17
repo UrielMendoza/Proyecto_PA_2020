@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `alumnomaterias`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumnomaterias` (
   `id_alumnoMaterias` int(4) NOT NULL AUTO_INCREMENT,
-  `id_numCuenta1` int(4) NOT NULL,
-  `id_materiasHorarios1` int(4) NOT NULL,
-  `calificacion` float NOT NULL,
+  `id_numCuenta1` int(4) DEFAULT NULL,
+  `id_materiasHorarios1` int(4) DEFAULT NULL,
+  `calificacion` float DEFAULT NULL,
   PRIMARY KEY (`id_alumnoMaterias`),
   KEY `id_numCuenta1` (`id_numCuenta1`),
   KEY `id_materiasHorarios1` (`id_materiasHorarios1`),
@@ -54,18 +54,18 @@ DROP TABLE IF EXISTS `alumnos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumnos` (
   `id_numCuenta` int(4) NOT NULL AUTO_INCREMENT,
-  `id_grupo1` int(4) NOT NULL,
-  `nombre` varchar(60) NOT NULL,
-  `apellido` varchar(60) NOT NULL,
-  `sexo` varchar(1) NOT NULL,
-  `fechaNacAlum` varchar(20) NOT NULL,
+  `id_grupo1` int(4) DEFAULT NULL,
+  `nombre` varchar(60) DEFAULT NULL,
+  `apellido` varchar(60) DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
+  `fechaNacAlum` varchar(20) DEFAULT NULL,
   `direccion` varchar(150) DEFAULT NULL,
   `cp` int(4) DEFAULT NULL,
   `telefono` varchar(25) DEFAULT NULL,
   `correo` varchar(60) DEFAULT NULL,
-  `promedio` float NOT NULL,
-  `estatus` varchar(15) NOT NULL,
-  `generacion` int(4) NOT NULL,
+  `promedio` float DEFAULT NULL,
+  `estatus` varchar(15) DEFAULT NULL,
+  `generacion` int(4) DEFAULT NULL,
   PRIMARY KEY (`id_numCuenta`),
   KEY `id_grupo1` (`id_grupo1`),
   CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`id_grupo1`) REFERENCES `grupos` (`id_grupo`)
@@ -78,7 +78,7 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1000,1,'Juanito','Bodoque','M','14/05/2067','Tolsa 36Colonia Centro, CentroCuauht?moc06000 Ciudad de M?xico, CDMX',86842,'5524568989','jgsgz@gmail.com',10,'alumno',2008),(1001,1,'Pedro','Marco','M','13/06/2008','Dr Jimenez 354\nDoctores\nCuauht?moc\n06720 Ciudad de M?xico, CDMX',55565,'5524868982','psdmar@gmail.com',0,'alumno',2008),(1002,1,'Antonio ','Serra','M','13/07/2008','San Lorenzo la Cebada\n16035 Ciudad de M?xico, CDMX',58954,'5525168975','annsier@gmail.com',0,'alumno',2008),(1003,1,'Samira','Salgado','F','12/08/2008','\nPlan de Ayala\nSan Lorenzo la Cebada\nXochimilco\n16035 Ciudad de M?xico, CDMX',57577,'5525468968','samsal@gmail.com',0,'alumno',2008),(1004,1,'Antia','Gordo','F','11/09/2008','Constitucion de 1917\nSan Lorenzo la Cebada\nXochimilco\n16035 Ciudad de M?xico, CDMX',54757,'5525768961','angro@gmail.com',0,'alumno',2008),(1005,2,'Placido','Acedo','M','14/05/2007','Unnamed Road, Valle Escondido, Ciudad de M?xico, CDMX',45578,'5526068954','placve@gmail.com',9.4,'alumno',2007),(1006,2,'Lina','Tovar','F','13/06/2007','Huexotitla 8\nSan Andr?s Totoltepec\nTlalpan\n14400 Ciudad de M?xico, CDMX',57857,'5526368947','linntov@gmail.com',8.6,'alumno',2007),(1007,2,'Regina','Nieto','F','13/07/2007','Calle Diligencias 153\nSan Pedro M?rtir\nTlalpan\n14650 Ciudad de M?xico, CDMX',45455,'5526668940','regnu@gmail.com',7.8,'exalumno',2007),(1008,2,'Gael','Mendoza','M','12/08/2007','Zempoaltecas 69-15\nTlalcoligia\nTlalpan\n14430 Ciudad de M?xico, CDMX',49507,'5526968933','gaelme@gmail.com',7,'alumno',2007),(1009,2,'Salome','Ubeda','F','11/09/2007','Sta ?rsula Xitla\nTlalpan\n14420 Ciudad de M?xico, CDMX',49445,'5527268926','salum@gmail.com',6.2,'alumno',2007),(1010,3,'Jacqueline','Gutierrez','F','14/05/2006','San Jos? Buenavista 27\nSta ?rsula Xitla\nTlalpan\n14420 Ciudad de M?xico, CDMX',49384,'5527568919','jaqugu@gmail.com',9.4,'alumno',2006),(1011,3,'Latifa','Pedrosa','F','13/06/2006','Cedral\nSan Pedro M?rtir\nTlalpan\n14650 Ciudad de M?xico, CDMX',49322,'5527868912','lap@gmail.com',8.6,'alumno',2006),(1012,3,'Alvaro','Ferrando','M','13/07/2006','Monte de Piedad\n04310 Ciudad de M?xico, CDMX',49261,'5528168905','alfer@gmail.com',7.8,'alumno',2006),(1013,3,'Matilde','Martinez','F','12/08/2006','Av Melchor Ocampo 260\nSanta Catarina\nCoyoac?n\n04010 Ciudad de M?xico, CDMX',57575,'5528468898','matmar@gmail.com',7,'alumno',2006),(1014,3,'Candela','Gutierrez','F','11/09/2006','Cjon. Belisario Dom?nguez 170-158\nDel Carmen\nCoyoac?n\n04100 Ciudad de M?xico, CDMX',42757,'5528768891','cndegu@gmail.com',6.2,'alumno',2006),(1015,4,'Violeta','Quintana','F','14/05/2005','Francisco Javier Mina 61\nDel Carmen\nCoyoac?n\n04100 Ciudad de M?xico, CDMX',77757,'5529068884','violqui@gmail.com',9.4,'alumno',2005),(1016,4,'Fidel','Santos','M','13/06/2005','Ignacio Aldama #74, Berl?n Esquina, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX',75757,'5529368877','fidelsa@gmail.com',8.6,'alumno',2005),(1017,4,'Giovanni','Olivera','M','13/07/2005','Abasolo 178-172, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX',45757,'5529668870','giovannOli@gmail.com',7.8,'alumno',2005),(1018,4,'Nestor','Martinez','M','12/08/2005','Segunda Cda. Parque 6-4\nGral Anaya\nBenito Ju?rez\n03340 Ciudad de M?xico, CDMX',57577,'5529968863','nesmart@gmail.com',7,'alumno',2005),(1019,4,'Olalla','Garcia','M','11/09/2005','\nSan Pedro 157\nDel Carmen\nCoyoac?n\n04100 Ciudad de M?xico, CDMX',57578,'5530268856','olaGra@gmail.com',6.2,'alumno',2005);
+INSERT INTO `alumnos` VALUES (1000,1,'Juan','Garzon','M','14/05/2008','Tolsa 36\r\nColonia Centro, Centro\r\nCuauht?moc\r\n06000 Ciudad de M?xico, CDMX',86842,'5524568989','jgsgz@gmail.com',0,'alumno',2008),(1001,1,'Pedro','Marco','M','13/06/2008','Dr Jimenez 354\r\nDoctores\r\nCuauht?moc\r\n06720 Ciudad de M?xico, CDMX',55565,'5524868982','psdmar@gmail.com',0,'alumno',2008),(1002,1,'Antonio ','Serra','M','13/07/2008','San Lorenzo la Cebada\r\n16035 Ciudad de M?xico, CDMX',58954,'5525168975','annsier@gmail.com',0,'alumno',2008),(1003,1,'Samira','Salgado','F','12/08/2008','\r\nPlan de Ayala\r\nSan Lorenzo la Cebada\r\nXochimilco\r\n16035 Ciudad de M?xico, CDMX',57577,'5525468968','samsal@gmail.com',0,'alumno',2008),(1004,1,'Antia','Gordo','F','11/09/2008','Constitucion de 1917\r\nSan Lorenzo la Cebada\r\nXochimilco\r\n16035 Ciudad de M?xico, CDMX',54757,'5525768961','angro@gmail.com',0,'alumno',2008),(1005,2,'Placido','Acedo','M','14/05/2007','Unnamed Road, Valle Escondido, Ciudad de M?xico, CDMX',45578,'5526068954','placve@gmail.com',9.4,'alumno',2007),(1006,2,'Lina','Tovar','F','13/06/2007','Huexotitla 8\r\nSan Andr?s Totoltepec\r\nTlalpan\r\n14400 Ciudad de M?xico, CDMX',57857,'5526368947','linntov@gmail.com',8.6,'alumno',2007),(1007,2,'Regina','Nieto','F','13/07/2007','Calle Diligencias 153\r\nSan Pedro M?rtir\r\nTlalpan\r\n14650 Ciudad de M?xico, CDMX',45455,'5526668940','regnu@gmail.com',7.8,'exalumno',2007),(1008,2,'Gael','Mendoza','M','12/08/2007','Zempoaltecas 69-15\r\nTlalcoligia\r\nTlalpan\r\n14430 Ciudad de M?xico, CDMX',49507,'5526968933','gaelme@gmail.com',7,'alumno',2007),(1009,2,'Salome','Ubeda','F','11/09/2007','Sta ?rsula Xitla\r\nTlalpan\r\n14420 Ciudad de M?xico, CDMX',49445,'5527268926','salum@gmail.com',6.2,'alumno',2007),(1010,3,'Jacqueline','Gutierrez','F','14/05/2006','San Jos? Buenavista 27\r\nSta ?rsula Xitla\r\nTlalpan\r\n14420 Ciudad de M?xico, CDMX',49384,'5527568919','jaqugu@gmail.com',9.4,'alumno',2006),(1011,3,'Latifa','Pedrosa','F','13/06/2006','Cedral\r\nSan Pedro M?rtir\r\nTlalpan\r\n14650 Ciudad de M?xico, CDMX',49322,'5527868912','lap@gmail.com',8.6,'alumno',2006),(1012,3,'Alvaro','Ferrando','M','13/07/2006','Monte de Piedad\r\n04310 Ciudad de M?xico, CDMX',49261,'5528168905','alfer@gmail.com',7.8,'alumno',2006),(1013,3,'Matilde','Martinez','F','12/08/2006','Av Melchor Ocampo 260\r\nSanta Catarina\r\nCoyoac?n\r\n04010 Ciudad de M?xico, CDMX',57575,'5528468898','matmar@gmail.com',7,'alumno',2006),(1014,3,'Candela','Gutierrez','F','11/09/2006','Cjon. Belisario Dom?nguez 170-158\r\nDel Carmen\r\nCoyoac?n\r\n04100 Ciudad de M?xico, CDMX',42757,'5528768891','cndegu@gmail.com',6.2,'alumno',2006),(1015,4,'Violeta','Quintana','F','14/05/2005','Francisco Javier Mina 61\r\nDel Carmen\r\nCoyoac?n\r\n04100 Ciudad de M?xico, CDMX',77757,'5529068884','violqui@gmail.com',9.4,'alumno',2005),(1016,4,'Fidel','Santos','M','13/06/2005','Ignacio Aldama #74, Berl?n Esquina, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX',75757,'5529368877','fidelsa@gmail.com',8.6,'alumno',2005),(1017,4,'Giovanni','Olivera','M','13/07/2005','Abasolo 178-172, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX',45757,'5529668870','giovannOli@gmail.com',7.8,'alumno',2005),(1018,4,'Nestor','Martinez','M','12/08/2005','Segunda Cda. Parque 6-4\r\nGral Anaya\r\nBenito Ju?rez\r\n03340 Ciudad de M?xico, CDMX',57577,'5529968863','nesmart@gmail.com',7,'alumno',2005),(1019,4,'Olalla','Garcia','M','11/09/2005','\r\nSan Pedro 157\r\nDel Carmen\r\nCoyoac?n\r\n04100 Ciudad de M?xico, CDMX',57578,'5530268856','olaGra@gmail.com',6.2,'alumno',2005);
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,10 +91,10 @@ DROP TABLE IF EXISTS `asistencias`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `asistencias` (
   `id_asistencia` int(4) NOT NULL AUTO_INCREMENT,
-  `id_numCuenta2` int(4) NOT NULL,
-  `id_materiasHorarios2` int(4) NOT NULL,
-  `fecha` varchar(20) NOT NULL,
-  `asistencia` tinyint(1) NOT NULL,
+  `id_numCuenta2` int(4) DEFAULT NULL,
+  `id_materiasHorarios2` int(4) DEFAULT NULL,
+  `fecha` varchar(20) DEFAULT NULL,
+  `asistencia` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_asistencia`),
   KEY `id_numCuenta2` (`id_numCuenta2`),
   KEY `id_materiasHorarios2` (`id_materiasHorarios2`),
@@ -122,7 +122,7 @@ DROP TABLE IF EXISTS `grupos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `grupos` (
   `id_grupo` int(4) NOT NULL AUTO_INCREMENT,
-  `grado` int(1) NOT NULL,
+  `grado` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_grupo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -133,7 +133,7 @@ CREATE TABLE `grupos` (
 
 LOCK TABLES `grupos` WRITE;
 /*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
-INSERT INTO `grupos` VALUES (1,0),(2,1),(3,3),(4,4);
+INSERT INTO `grupos` VALUES (1,1),(2,1),(3,3),(4,4);
 /*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,11 +146,11 @@ DROP TABLE IF EXISTS `materias`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `materias` (
   `id_materia` int(4) NOT NULL AUTO_INCREMENT,
-  `nombreMateria` varchar(15) NOT NULL,
-  `descripcion` varchar(150) NOT NULL,
-  `laboratorio` tinyint(1) NOT NULL,
+  `nombreMateria` varchar(15) DEFAULT NULL,
+  `descripcion` varchar(150) DEFAULT NULL,
+  `laboratorio` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_materia`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +159,7 @@ CREATE TABLE `materias` (
 
 LOCK TABLES `materias` WRITE;
 /*!40000 ALTER TABLE `materias` DISABLE KEYS */;
-INSERT INTO `materias` VALUES (1,'biologia','Ciencia que estudia la estructura de los seres vivos y de sus procesos vitales.',1),(2,'quimica','Ciencia que estudia la composici?n y las propiedades de la materia y de las transformaciones que esta experimenta sin que se alteren los elementos que',1),(3,'fisica','Ciencia que estudia las propiedades de la materia y de la energ?a y establece las leyes que explican los fen?menos naturales, excluyendo los que modif',1),(4,'matematicas','Ciencia que estudia las propiedades de los n?meros y las relaciones que se establecen entre ellos.',0),(5,'geografia','Ciencia que estudia y describe la superficie de la Tierra en su aspecto f?sico, actual y natural, o como lugar habitado por la humanidad.',0),(6,'redaccion','La redacci?n es una forma de edici?n en la que se combinan (redactan) m?ltiples fuentes de textos y se modifican ligeramente para crear un solo docume',0),(7,'historia','La historia es la ciencia que tiene como objetivo el estudio de sucesos del pasado, tradicionalmente de la humanidad?, y como m?todo, el propio de las',0),(8,'edu. fisica','La ense?anza de la educaci?n f?sica consiste en un conjunto de estrategias did?cticas que promueven el acondicionamiento f?sico con actividades que ej',0),(9,'civismo','El civismo (del lat?n civis, ciudadano y civitas, civitatis, ciudad) o urbanidad se refiere a las pautas m?nimas de comportamiento social que nos perm',0),(10,'computacion','La computaci?n es la ciencia encargada de estudiar los sistemas, m?s precisamente computadoras, que autom?ticamente gestionan informaci?n. ',1),(11,'ingles','El ingl?s es un idioma que tiene casi el doble de hablantes como segunda lengua, lo cual nos puede dar una idea de su gran importancia.',0),(12,'literatura','Teor?a de la composici?n de las obras escritas en prosa o verso.',0),(13,'filosofia','Conjunto de reflexiones sobre la esencia, las propiedades, las causas y los efectos de las cosas naturales, especialmente sobre el hombre y el univers',0),(20,'Agronomia II','Materia de plantar',1);
+INSERT INTO `materias` VALUES (1,'biologia','Ciencia que estudia la estructura de los seres vivos y de sus procesos vitales.',1),(2,'quimica','Ciencia que estudia la composici?n y las propiedades de la materia y de las transformaciones que esta experimenta sin que se alteren los elementos que',1),(3,'fisica','Ciencia que estudia las propiedades de la materia y de la energ?a y establece las leyes que explican los fen?menos naturales, excluyendo los que modif',1),(4,'matematicas','Ciencia que estudia las propiedades de los n?meros y las relaciones que se establecen entre ellos.',0),(5,'geografia','Ciencia que estudia y describe la superficie de la Tierra en su aspecto f?sico, actual y natural, o como lugar habitado por la humanidad.',0),(6,'redaccion','La redacci?n es una forma de edici?n en la que se combinan (redactan) m?ltiples fuentes de textos y se modifican ligeramente para crear un solo docume',0),(7,'historia','La historia es la ciencia que tiene como objetivo el estudio de sucesos del pasado, tradicionalmente de la humanidad?, y como m?todo, el propio de las',0),(8,'edu. fisica','La ense?anza de la educaci?n f?sica consiste en un conjunto de estrategias did?cticas que promueven el acondicionamiento f?sico con actividades que ej',0),(9,'civismo','El civismo (del lat?n civis, ciudadano y civitas, civitatis, ciudad) o urbanidad se refiere a las pautas m?nimas de comportamiento social que nos perm',0),(10,'computacion','La computaci?n es la ciencia encargada de estudiar los sistemas, m?s precisamente computadoras, que autom?ticamente gestionan informaci?n. ',1),(11,'ingles','El ingl?s es un idioma que tiene casi el doble de hablantes como segunda lengua, lo cual nos puede dar una idea de su gran importancia.',0),(12,'literatura','Teor?a de la composici?n de las obras escritas en prosa o verso.',0),(13,'filosofia','Conjunto de reflexiones sobre la esencia, las propiedades, las causas y los efectos de las cosas naturales, especialmente sobre el hombre y el univers',0);
 /*!40000 ALTER TABLE `materias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,12 +172,12 @@ DROP TABLE IF EXISTS `materiashorarios`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `materiashorarios` (
   `id_materiasHorarios` int(4) NOT NULL AUTO_INCREMENT,
-  `id_materia1` int(4) NOT NULL,
-  `id_numCuentaProf1` int(4) NOT NULL,
-  `id_grupo2` int(4) NOT NULL,
-  `id_salon1` int(4) NOT NULL,
-  `horario` varchar(15) NOT NULL,
-  `dias` varchar(15) NOT NULL,
+  `id_materia1` int(4) DEFAULT NULL,
+  `id_numCuentaProf1` int(4) DEFAULT NULL,
+  `id_grupo2` int(4) DEFAULT NULL,
+  `id_salon1` int(4) DEFAULT NULL,
+  `horario` varchar(15) DEFAULT NULL,
+  `dias` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id_materiasHorarios`),
   KEY `id_materia1` (`id_materia1`),
   KEY `id_numCuentaProf1` (`id_numCuentaProf1`),
@@ -209,8 +209,8 @@ DROP TABLE IF EXISTS `nivel`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `nivel` (
   `id_nivel` int(2) NOT NULL AUTO_INCREMENT,
-  `nombreNivel` varchar(15) NOT NULL,
-  `gradoAcademico` varchar(15) NOT NULL,
+  `nombreNivel` varchar(15) DEFAULT NULL,
+  `gradoAcademico` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id_nivel`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -234,11 +234,11 @@ DROP TABLE IF EXISTS `profesores`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesores` (
   `id_numCuentaProf` int(4) NOT NULL AUTO_INCREMENT,
-  `id_nivel1` int(2) NOT NULL,
-  `nombreProf` varchar(60) NOT NULL,
-  `apellidoProf` varchar(60) NOT NULL,
-  `sexoProf` varchar(1) NOT NULL,
-  `fechaNacProf` varchar(20) NOT NULL,
+  `id_nivel1` int(2) DEFAULT NULL,
+  `nombreProf` varchar(60) DEFAULT NULL,
+  `apellidoProf` varchar(60) DEFAULT NULL,
+  `sexoProf` varchar(1) DEFAULT NULL,
+  `fechaNacProf` varchar(20) DEFAULT NULL,
   `direccionProf` varchar(150) DEFAULT NULL,
   `cpProf` int(4) DEFAULT NULL,
   `telefonoProf` varchar(25) DEFAULT NULL,
@@ -269,8 +269,8 @@ DROP TABLE IF EXISTS `salones`;
 CREATE TABLE `salones` (
   `id_salon` int(4) NOT NULL AUTO_INCREMENT,
   `edificio` varchar(1) DEFAULT NULL,
-  `cupo` int(3) NOT NULL,
-  `laboratorio` tinyint(1) NOT NULL,
+  `cupo` int(3) DEFAULT NULL,
+  `laboratorio` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_salon`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -294,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-17 14:20:25
+-- Dump completed on 2021-01-17 15:02:09
