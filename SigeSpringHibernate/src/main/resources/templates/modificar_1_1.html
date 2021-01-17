@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos de la Persona</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Datos de la Alumno</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${alumno}">
+            <input type="hidden" name="idAlumno" />
+            <br/>
+            <label for="nombre">Nombre1:</label>
+            <input type="text" name="nombre" />
+            <br/>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" />
+            <br/>
+            <label for="fechaNac">Fecha de Nacimiento:</label>
+            <input type="text" name="fechaNac" />
+            <br/>
+            <label for="sexo">Sexo:</label>
+            <input type="text" name="sexo"/>
+            <br/>
+            <label for="promedio">Promedio:</label>
+            <input type="text" name="promedio" />
+            <br/>
+            <label for="grupo.idGrupos">Grupo:</label>
+            <input type="text" name="grupo.idGrupos"/>
+            <br/>
+            <label for="generacion">Generacion:</label>
+            <input type="text" name="generacion" />
+            <br/>
+            <label for="estatus">Estatus:</label>
+            <input type="text" name="estatus" />
+            <br/>
+            <label for="correo">Email:</label>
+            <input type="email" name="correo" />
+            <br/>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="telefono"/>
+            <br/>
+            <label for="direccion">Direccion:</label>
+            <input type="text" name="direccion" />
+            <br/>
+            <label for="cp">CP:</label>
+            <input type="text" name="cp"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>

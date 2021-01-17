@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos de la alumno</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Datos de la alumno</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${alumno}">
+            <input type="hidden" name="idAlumno" th:field="*{idAlumno}"/>
+            <br/>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <br/>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <br/>
+            <label for="fechaNac">Fecha de Nacimiento:</label>
+            <input type="text" name="fechaNac" th:field="*{fechaNac}"/>
+            <br/>
+            <label for="sexo">Sexo:</label>
+            <input type="text" name="sexo" th:field="*{sexo}"/>
+            <br/>
+            <label for="promedio">promedio:</label>
+            <input type="text" name="promedio" th:field="*{promedio}"/>
+            <br/>
+            <label for="grupo.idGrupos">Grupo:</label>
+            <input type="text" name="grupo.idGrupos" th:field="*{grupo.idGrupos}"/>
+            <br/>
+            <label for="generacion">Generacion:</label>
+            <input type="text" name="generacion" th:field="*{generacion}"/>
+            <br/>
+            <label for="estatus">Estatus:</label>
+            <input type="text" name="estatus" th:field="*{estatus}"/>
+            <br/>
+            <label for="correo">Correo:</label>
+            <input type="text" name="correo" th:field="*{correo}"/>
+            <br/>
+            <label for="telefono">Telefono:</label>
+            <input type="text" name="telefono" th:field="*{telefono}"/>
+            <br/>
+            <label for="direccion">Direccion:</label>
+            <input type="text" name="direccion" th:field="*{direccion}"/>
+            <br/>
+            <label for="cp">CP:</label>
+            <input type="text" name="cp" th:field="*{cp}"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>

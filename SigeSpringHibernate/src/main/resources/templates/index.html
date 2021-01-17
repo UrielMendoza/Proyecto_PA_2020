@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <a th:href="@{/agrega}">Crear Alumno</a>
+        <a th:href="@{/agregar}">Crear Persona</a>
+        <div th:if="${alumnos != null and !alumnos.empty}">
+            <table border="1">
+                <tr>
+                    <th>NumCuenta</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Sexo</th>
+                    <th>Promedio</th>
+                    <th>Grupo</th>
+                    <th>Grado</th>
+                    <th>Generacion</th>
+                    <th>Estatus</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Direccion</th>
+                    <th>CP</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                <tr th:each="alumno : ${alumnos}">
+                    <td th:text="${alumno.idAlumno}">Mostrar NumCuenta</td>
+                    <td th:text="${alumno.nombre}">Mostrar Nombre</td>
+                    <td th:text="${alumno.apellido}">Mostrar Apellido</td>
+                    <td th:text="${alumno.fechaNac}">Mostrar Fecha Nacimiento</td>
+                    <td th:text="${alumno.sexo}">Mostrar Apellido</td>                 
+                    <td th:text="${alumno.promedio}">Mostrar Promedio</td>
+                    <td th:text="${alumno.grupo.idGrupos}">Mostrar Grupo</td>
+                    <td th:text="${alumno.grupo.grado}">Mostrar Grado</td>
+                    <td th:text="${alumno.generacion}">Mostrar Generacion</td>
+                    <td th:text="${alumno.estatus}">Mostrar Estatus</td>
+                    <td th:text="${alumno.correo}">Mostrar Email</td>
+                    <td th:text="${alumno.telefono}">Mostrar Teléfono</td>
+                    <td th:text="${alumno.direccion}">Mostrar Direccion</td>
+                    <td th:text="${alumno.cp}">Mostrar CP</td>
+                    <td><a th:href="@{/editar/} + ${alumno.idAlumno}" th:text="Editar"/></td>
+                    <td><a th:href="@{/eliminar(idAlumno=${alumno.idAlumno})}" th:text="Eliminar"/></td>
+            </table>
+        </div>
+        <div th:if="${alumnos == null or alumnos.empty}">
+            La lista de alumnos está vacía
+        </div>
+        
+    </body>
