@@ -1,13 +1,13 @@
-id_numCuentaProf,id_nivel1,nombreProf,apellidoProf,sexoProf,fechaNacProf,direccionProf,cpProf,telefonoProf,correoProf
-1,1,Fabiola,Hernandez,F,14/05/1989,"Moctezuma 2da Secc, Ciudad de México, CDMX",56345,5525659589,hdez@gmail.com
-2,1,Erika,Guzman,F,01/05/1990,"C. U. Benito Juárez, 06760 Ciudad de México, CDMX",57895,5583854514,gzmna@gmail.com
-3,4,Juan,Ramirez,M,26/04/1970,"Portales Nte, Ciudad de México, CDMX",59445,5642049439,rmasd@gmail.com
-4,1,Hector,Preciado,M,17/11/1985,"Bramadero Ramos Millán, Ciudad de México, CDMX",60995,5700244364,htpre@gmail.com
-5,1,Pedro,Hernandez,M,08/10/1988,"San Lucas, 09000 Ciudad de México, CDMX",62545,5758439289,pehredf@gmail.com
-6,2,Maria,Osorio,F,29/11/1980,"Pedregal de Sta Úrsula, Ciudad de México, CDMX",64095,5816634214,mariori@gmail.com
-7,4,Susana,Hurtado,F,10/06/1968,"Los Reyes, 04330 Ciudad de México, CDMX",65645,5874829139,hurma@gmail.com
-8,1,Mercedes,Naranjo,F,21/03/1993,"Granjas San Antonio, 09070 Ciudad de México, CDMX",67195,5933024064,mercnara@gmail.com
-9,3,Julio,Rios,M,07/02/1975,"Colonia Centro, Centro, Ciudad de México, CDMX",68745,5991218989,riosjul@gmail.com
-10,5,Alejandro,Valle,M,13/08/1959,"Lomas de los Ángeles Tetelpan, 01790 Ciudad de México, CDMX",70295,6049413914,aljvalles@gmail.com
-11,1,Alberto,Cruz,M,04/05/1986,"Camino a Santa Ursula, Sta Úrsula Xitla, Tlalpan, 14420 Ciudad de México, CDMX",71845,6107608839,albrxrcza@gmail.com
-12,1,Sonia,Maya,F,15/01/1992,"Cda. Nahoas, Tlalcoligia, Tlalpan, 14430 Ciudad de México, CDMX",73395,6165803764,simomaya@gmail.com
+id_numCuentaProf,nombreProf,apellidoProf,sexoProf,fechaNacProf,direccionProf,cpProf,telefonoProf,correoProf
+1,Fabiola,Hernandez,F,14/05/1989,"Moctezuma 2da Secc, Ciudad de México, CDMX",56345,5525659589,hdez@gmail.com
+2,Erika,Guzman,F,01/05/1990,"C. U. Benito Juárez, 06760 Ciudad de México, CDMX",57895,5583854514,gzmna@gmail.com
+3,Juan,Ramirez,M,26/04/1970,"Portales Nte, Ciudad de México, CDMX",59445,5642049439,rmasd@gmail.com
+4,Hector,Preciado,M,17/11/1985,"Bramadero Ramos Millán, Ciudad de México, CDMX",60995,5700244364,htpre@gmail.com
+5,Pedro,Hernandez,M,08/10/1988,"San Lucas, 09000 Ciudad de México, CDMX",62545,5758439289,pehredf@gmail.com
+6,Maria,Osorio,F,29/11/1980,"Pedregal de Sta Úrsula, Ciudad de México, CDMX",64095,5816634214,mariori@gmail.com
+7,Susana,Hurtado,F,10/06/1968,"Los Reyes, 04330 Ciudad de México, CDMX",65645,5874829139,hurma@gmail.com
+8,Mercedes,Naranjo,F,21/03/1993,"Granjas San Antonio, 09070 Ciudad de México, CDMX",67195,5933024064,mercnara@gmail.com
+9,Julio,Rios,M,07/02/1975,"Colonia Centro, Centro, Ciudad de México, CDMX",68745,5991218989,riosjul@gmail.com
+10,Alejandro,Valle,M,13/08/1959,"Lomas de los Ángeles Tetelpan, 01790 Ciudad de México, CDMX",70295,6049413914,aljvalles@gmail.com
+11,Alberto,Cruz,M,04/05/1986,"Camino a Santa Ursula, Sta Úrsula Xitla, Tlalpan, 14420 Ciudad de México, CDMX",71845,6107608839,albrxrcza@gmail.com
+12,Sonia,Maya,F,15/01/1992,"Cda. Nahoas, Tlalcoligia, Tlalpan, 14430 Ciudad de México, CDMX",73395,6165803764,simomaya@gmail.com
