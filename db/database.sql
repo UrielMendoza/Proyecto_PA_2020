@@ -7,79 +7,79 @@ USE escuela;
 
 -- Crear tablas
 CREATE TABLE alumnos (
-    id_numCuenta INT(4) NOT NULL AUTO_INCREMENT,
-    id_grupo1 INT(4) NOT NULL,
-    nombre VARCHAR(60) NOT NULL,
-    apellido VARCHAR(60) NOT NULL,
-    sexo VARCHAR(1) NOT NULL,
-    fechaNacAlum VARCHAR(20) NOT NULL,
+    id_numCuenta INT(4)  AUTO_INCREMENT,
+    id_grupo1 INT(4) ,
+    nombre VARCHAR(60) ,
+    apellido VARCHAR(60) ,
+    sexo VARCHAR(1) ,
+    fechaNacAlum VARCHAR(20) ,
     direccion VARCHAR(150),
     cp INT(4),
     telefono VARCHAR(25),
     correo VARCHAR(60),
-    promedio FLOAT(3) NOT NULL,
-    estatus VARCHAR(15) NOT NULL,
-    generacion INT(4) NOT NULL,
+    promedio FLOAT(3) ,
+    estatus VARCHAR(15) ,
+    generacion INT(4) ,
     PRIMARY KEY (id_numcuenta)
 );
 
 CREATE TABLE alumnoMaterias (
-    id_alumnoMaterias INT(4) NOT NULL AUTO_INCREMENT,
-    id_numCuenta1 INT(4) NOT NULL,
-    id_materiasHorarios1 INT(4) NOT NULL,
-    calificacion FLOAT(2) NOT NULL,
+    id_alumnoMaterias INT(4)  AUTO_INCREMENT,
+    id_numCuenta1 INT(4) ,
+    id_materiasHorarios1 INT(4) ,
+    calificacion FLOAT(2) ,
     PRIMARY KEY (id_alumnoMaterias)
 );
 
 CREATE TABLE asistencias (
-    id_asistencia INT(4) NOT NULL AUTO_INCREMENT,
-    id_numCuenta2 INT(4) NOT NULL,
-    id_materiasHorarios2 INT(4) NOT NULL,
-    fecha VARCHAR(20) NOT NULL,
-    asistencia TINYINT(1) NOT NULL,
+    id_asistencia INT(4)  AUTO_INCREMENT,
+    id_numCuenta2 INT(4) ,
+    id_materiasHorarios2 INT(4) ,
+    fecha VARCHAR(20) ,
+    asistencia TINYINT(1) ,
     PRIMARY KEY (id_asistencia)
 );
 
 CREATE TABLE grupos (
-    id_grupo INT(4) NOT NULL AUTO_INCREMENT,
-    grado INT(1) NOT NULL,
+    id_grupo INT(4)  AUTO_INCREMENT,
+    grado INT(1) ,
     PRIMARY KEY (id_grupo)
 );
 
 CREATE TABLE salones (
-    id_salon INT(4) NOT NULL AUTO_INCREMENT,
+    id_salon INT(4)  AUTO_INCREMENT,
     edificio VARCHAR(1),
-    cupo INT(3) NOT NULL,
-    laboratorio TINYINT(1) NOT NULL,
+    cupo INT(3) ,
+    laboratorio TINYINT(1) ,
     PRIMARY KEY (id_salon)
 );
 
 CREATE TABLE materias (
-    id_materia INT(4) NOT NULL AUTO_INCREMENT,
-    nombreMateria VARCHAR(15) NOT NULL,
-    descripcion VARCHAR(150) NOT NULL,
-    laboratorio TINYINT(1) NOT NULL,
+    id_materia INT(4)  AUTO_INCREMENT,
+    nombreMateria VARCHAR(15) ,
+    descripcion VARCHAR(150) ,
+    laboratorio TINYINT(1) ,
     PRIMARY KEY (id_materia)
 );
 
 CREATE TABLE materiasHorarios (
-    id_materiasHorarios INT(4) NOT NULL AUTO_INCREMENT,
-    id_materia1 INT(4) NOT NULL,
-    id_numCuentaProf1 INT(4) NOT NULL,
-    id_grupo2 INT(4) NOT NULL,
-    id_salon1 INT(4) NOT NULL,
-    horario VARCHAR(15) NOT NULL,
-    dias VARCHAR(15) NOT NULL,
+    id_materiasHorarios INT(4)  AUTO_INCREMENT,
+    id_materia1 INT(4) ,
+    id_numCuentaProf1 INT(4) ,
+    id_grupo2 INT(4) ,
+    id_salon1 INT(4) ,
+    horario VARCHAR(15) ,
+    dias VARCHAR(15) ,
     PRIMARY KEY (id_materiasHorarios)
 );
 
 CREATE TABLE profesores (
-    id_numCuentaProf INT(4) NOT NULL AUTO_INCREMENT,
-    id_nivel1 INT(2) NOT NULL,
-    nombreProf VARCHAR(60) NOT NULL,
-    apellidoProf VARCHAR(60) NOT NULL,
-    sexoProf VARCHAR(1) NOT NULL,
-    fechaNacProf VARCHAR(20) NOT NULL,
+    id_numCuentaProf INT(4)  AUTO_INCREMENT,
+    id_nivel1 INT(2) ,
+    nombreProf VARCHAR(60) ,
+    apellidoProf VARCHAR(60) ,
+    sexoProf VARCHAR(1) ,
+    fechaNacProf VARCHAR(20) ,
     direccionProf VARCHAR(150),
     cpProf INT(4),
     telefonoProf VARCHAR(25),
@@ -88,9 +88,9 @@ CREATE TABLE profesores (
 );
 
 CREATE TABLE nivel (
-    id_nivel INT(2) NOT NULL AUTO_INCREMENT,
-    nombreNivel VARCHAR(15) NOT NULL,
-    gradoAcademico VARCHAR(15) NOT NULL,
+    id_nivel INT(2)  AUTO_INCREMENT,
+    nombreNivel VARCHAR(15) ,
+    gradoAcademico VARCHAR(15) ,
     PRIMARY KEY (id_nivel)
 );
 
@@ -108,63 +108,63 @@ ALTER TABLE materiasHorarios ADD FOREIGN KEY(id_salon1) REFERENCES salones(id_sa
 
 
 -- Importar valores csv
-LOAD DATA INFILE 'C:/Users/José Antonio Jiménez/Documents/itHub/Proyecto_PA_2020/db/salones.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//salones.csv' 
 INTO TABLE salones 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\nivel.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//nivel.csv' 
 INTO TABLE nivel 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\materias.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//materias.csv' 
 INTO TABLE materias 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\grupos.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//grupos.csv' 
 INTO TABLE grupos 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\profesores.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//profesores.csv' 
 INTO TABLE profesores 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\alumnos.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//alumnos.csv' 
 INTO TABLE alumnos 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\dbmateriasHorarios.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//materiasHorarios.csv' 
 INTO TABLE materiasHorarios 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\alumnosMaterias.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//alumnosMaterias.csv' 
 INTO TABLE alumnoMaterias 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\Users\José Antonio Jiménez\Documents\GitHub\Proyecto_PA_2020\db\asistencias.csv' 
+LOAD DATA INFILE 'C://Users//uriel//Documents//GitHub//Proyecto_PA_2020//db//asistencias.csv' 
 INTO TABLE asistencias 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
