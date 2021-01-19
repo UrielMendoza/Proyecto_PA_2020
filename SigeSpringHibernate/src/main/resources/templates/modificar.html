@@ -28,8 +28,9 @@
             <input type="text" name="promedio" th:field="*{promedio}"/>
             <br/>
             <label for="grupo.idGrupos">Grupo:</label>
-            <input type="text" name="grupo.idGrupos" th:field="*{grupo.idGrupos}"/>
-            <br/>
+            <input type="text" name="idGrupos" th:field="*{grupo.idGrupos}"/>
+            <br/>          
+            <input type="hidden" name="grado" th:field="*{grupo.grado}"/>
             <label for="generacion">Generacion:</label>
             <input type="text" name="generacion" th:field="*{generacion}"/>
             <br/>
@@ -48,6 +49,7 @@
             <label for="cp">CP:</label>
             <input type="text" name="cp" th:field="*{cp}"/>
             <br/>
+            
             <input type="submit" name="guardar" value="Guardar"/>
         </form>
     </body>

@@ -1,5 +1,6 @@
 package mx.unam.pa.sige.web;
 
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import mx.unam.pa.sige.domain.*;
 import mx.unam.pa.sige.servicio.*;
@@ -21,7 +22,7 @@ public class ControladorInicio {
     
     @GetMapping("/")
     public String inicio(Model model){
-        var alumnos = alumnoService.listarAlumnos();
+        List<Alumnos> alumnos = alumnoService.listarAlumnos();
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("alumnos", alumnos);
         return "index";
