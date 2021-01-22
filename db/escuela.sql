@@ -55,17 +55,18 @@ DROP TABLE IF EXISTS `alumnos`;
 CREATE TABLE `alumnos` (
   `id_numCuenta` int(4) NOT NULL AUTO_INCREMENT,
   `id_grupo1` int(4) NOT NULL,
+  `password` varchar(20) DEFAULT NULL,
   `nombre` varchar(60) DEFAULT NULL,
   `apellido` varchar(60) DEFAULT NULL,
   `sexo` varchar(1) DEFAULT NULL,
   `fechaNacAlum` varchar(20) DEFAULT NULL,
   `direccion` varchar(150) DEFAULT NULL,
-  `cp` int(4) DEFAULT NULL,
+  `cp` varchar(4) DEFAULT NULL,
   `telefono` varchar(25) DEFAULT NULL,
   `correo` varchar(60) DEFAULT NULL,
   `promedio` float DEFAULT NULL,
   `estatus` varchar(15) DEFAULT NULL,
-  `generacion` int(4) DEFAULT NULL,
+  `generacion` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`id_numCuenta`),
   KEY `id_grupo1` (`id_grupo1`),
   CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`id_grupo1`) REFERENCES `grupos` (`id_grupo`)
@@ -78,7 +79,7 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1000,1,'Juan','Garzon','M','14/05/2008','Tolsa 36\r\nColonia Centro, Centro\r\nCuauht?moc\r\n06000 Ciudad de M?xico, CDMX',86842,'5524568989','jgsgz@gmail.com',0,'alumno',2008),(1001,1,'Pedro','Marco','M','13/06/2008','Dr Jimenez 354\r\nDoctores\r\nCuauht?moc\r\n06720 Ciudad de M?xico, CDMX',55565,'5524868982','psdmar@gmail.com',0,'alumno',2008),(1002,1,'Antonio ','Serra','M','13/07/2008','San Lorenzo la Cebada\r\n16035 Ciudad de M?xico, CDMX',58954,'5525168975','annsier@gmail.com',0,'alumno',2008),(1003,1,'Samira','Salgado','F','12/08/2008','\r\nPlan de Ayala\r\nSan Lorenzo la Cebada\r\nXochimilco\r\n16035 Ciudad de M?xico, CDMX',57577,'5525468968','samsal@gmail.com',0,'alumno',2008),(1004,1,'Antia','Gordo','F','11/09/2008','Constitucion de 1917\r\nSan Lorenzo la Cebada\r\nXochimilco\r\n16035 Ciudad de M?xico, CDMX',54757,'5525768961','angro@gmail.com',0,'alumno',2008),(1005,2,'Placido','Acedo','M','14/05/2007','Unnamed Road, Valle Escondido, Ciudad de M?xico, CDMX',45578,'5526068954','placve@gmail.com',9.4,'alumno',2007),(1006,2,'Lina','Tovar','F','13/06/2007','Huexotitla 8\r\nSan Andr?s Totoltepec\r\nTlalpan\r\n14400 Ciudad de M?xico, CDMX',57857,'5526368947','linntov@gmail.com',8.6,'alumno',2007),(1007,2,'Regina','Nieto','F','13/07/2007','Calle Diligencias 153\r\nSan Pedro M?rtir\r\nTlalpan\r\n14650 Ciudad de M?xico, CDMX',45455,'5526668940','regnu@gmail.com',7.8,'exalumno',2007),(1008,2,'Gael','Mendoza','M','12/08/2007','Zempoaltecas 69-15\r\nTlalcoligia\r\nTlalpan\r\n14430 Ciudad de M?xico, CDMX',49507,'5526968933','gaelme@gmail.com',7,'alumno',2007),(1009,2,'Salome','Ubeda','F','11/09/2007','Sta ?rsula Xitla\r\nTlalpan\r\n14420 Ciudad de M?xico, CDMX',49445,'5527268926','salum@gmail.com',6.2,'alumno',2007),(1010,3,'Jacqueline','Gutierrez','F','14/05/2006','San Jos? Buenavista 27\r\nSta ?rsula Xitla\r\nTlalpan\r\n14420 Ciudad de M?xico, CDMX',49384,'5527568919','jaqugu@gmail.com',9.4,'alumno',2006),(1011,3,'Latifa','Pedrosa','F','13/06/2006','Cedral\r\nSan Pedro M?rtir\r\nTlalpan\r\n14650 Ciudad de M?xico, CDMX',49322,'5527868912','lap@gmail.com',8.6,'alumno',2006),(1012,3,'Alvaro','Ferrando','M','13/07/2006','Monte de Piedad\r\n04310 Ciudad de M?xico, CDMX',49261,'5528168905','alfer@gmail.com',7.8,'alumno',2006),(1013,3,'Matilde','Martinez','F','12/08/2006','Av Melchor Ocampo 260\r\nSanta Catarina\r\nCoyoac?n\r\n04010 Ciudad de M?xico, CDMX',57575,'5528468898','matmar@gmail.com',7,'alumno',2006),(1014,3,'Candela','Gutierrez','F','11/09/2006','Cjon. Belisario Dom?nguez 170-158\r\nDel Carmen\r\nCoyoac?n\r\n04100 Ciudad de M?xico, CDMX',42757,'5528768891','cndegu@gmail.com',6.2,'alumno',2006),(1015,4,'Violeta','Quintana','F','14/05/2005','Francisco Javier Mina 61\r\nDel Carmen\r\nCoyoac?n\r\n04100 Ciudad de M?xico, CDMX',77757,'5529068884','violqui@gmail.com',9.4,'alumno',2005),(1016,4,'Fidel','Santos','M','13/06/2005','Ignacio Aldama #74, Berl?n Esquina, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX',75757,'5529368877','fidelsa@gmail.com',8.6,'alumno',2005),(1017,4,'Giovanni','Olivera','M','13/07/2005','Abasolo 178-172, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX',45757,'5529668870','giovannOli@gmail.com',7.8,'alumno',2005),(1018,4,'Nestor','Martinez','M','12/08/2005','Segunda Cda. Parque 6-4\r\nGral Anaya\r\nBenito Ju?rez\r\n03340 Ciudad de M?xico, CDMX',57577,'5529968863','nesmart@gmail.com',7,'alumno',2005),(1019,4,'Olalla','Garcia','M','11/09/2005','\r\nSan Pedro 157\r\nDel Carmen\r\nCoyoac?n\r\n04100 Ciudad de M?xico, CDMX',57578,'5530268856','olaGra@gmail.com',6.2,'alumno',2005);
+INSERT INTO `alumnos` VALUES (1000,1,'password_0','Juan','Garzon','M','14/05/2008','Tolsa 36\nColonia Centro, Centro\nCuauht?moc\n06000 Ciudad de M?xico, CDMX','8684','5524568989','jgsgz@gmail.com',0,'alumno','2008'),(1001,1,'password_1','Pedro','Marco','M','13/06/2008','Dr Jimenez 354\nDoctores\nCuauht?moc\n06720 Ciudad de M?xico, CDMX','5556','5524868982','psdmar@gmail.com',0,'alumno','2008'),(1002,1,'password_2','Antonio ','Serra','M','13/07/2008','San Lorenzo la Cebada\n16035 Ciudad de M?xico, CDMX','5895','5525168975','annsier@gmail.com',0,'alumno','2008'),(1003,1,'password_3','Samira','Salgado','F','12/08/2008','\nPlan de Ayala\nSan Lorenzo la Cebada\nXochimilco\n16035 Ciudad de M?xico, CDMX','5757','5525468968','samsal@gmail.com',0,'alumno','2008'),(1004,1,'password_4','Antia','Gordo','F','11/09/2008','Constitucion de 1917\nSan Lorenzo la Cebada\nXochimilco\n16035 Ciudad de M?xico, CDMX','5475','5525768961','angro@gmail.com',0,'alumno','2008'),(1005,2,'password_5','Placido','Acedo','M','14/05/2007','Unnamed Road, Valle Escondido, Ciudad de M?xico, CDMX','4557','5526068954','placve@gmail.com',9.4,'alumno','2007'),(1006,2,'password_6','Lina','Tovar','F','13/06/2007','Huexotitla 8\nSan Andr?s Totoltepec\nTlalpan\n14400 Ciudad de M?xico, CDMX','5785','5526368947','linntov@gmail.com',8.6,'alumno','2007'),(1007,2,'password_7','Regina','Nieto','F','13/07/2007','Calle Diligencias 153\nSan Pedro M?rtir\nTlalpan\n14650 Ciudad de M?xico, CDMX','4545','5526668940','regnu@gmail.com',7.8,'exalumno','2007'),(1008,2,'password_8','Gael','Mendoza','M','12/08/2007','Zempoaltecas 69-15\nTlalcoligia\nTlalpan\n14430 Ciudad de M?xico, CDMX','4950','5526968933','gaelme@gmail.com',7,'alumno','2007'),(1009,2,'password_9','Salome','Ubeda','F','11/09/2007','Sta ?rsula Xitla\nTlalpan\n14420 Ciudad de M?xico, CDMX','4944','5527268926','salum@gmail.com',6.2,'alumno','2007'),(1010,3,'password_10','Jacqueline','Gutierrez','F','14/05/2006','San Jos? Buenavista 27\nSta ?rsula Xitla\nTlalpan\n14420 Ciudad de M?xico, CDMX','4938','5527568919','jaqugu@gmail.com',9.4,'alumno','2006'),(1011,3,'password_11','Latifa','Pedrosa','F','13/06/2006','Cedral\nSan Pedro M?rtir\nTlalpan\n14650 Ciudad de M?xico, CDMX','4932','5527868912','lap@gmail.com',8.6,'alumno','2006'),(1012,3,'password_12','Alvaro','Ferrando','M','13/07/2006','Monte de Piedad\n04310 Ciudad de M?xico, CDMX','4926','5528168905','alfer@gmail.com',7.8,'alumno','2006'),(1013,3,'password_13','Matilde','Martinez','F','12/08/2006','Av Melchor Ocampo 260\nSanta Catarina\nCoyoac?n\n04010 Ciudad de M?xico, CDMX','5757','5528468898','matmar@gmail.com',7,'alumno','2006'),(1014,3,'password_14','Candela','Gutierrez','F','11/09/2006','Cjon. Belisario Dom?nguez 170-158\nDel Carmen\nCoyoac?n\n04100 Ciudad de M?xico, CDMX','4275','5528768891','cndegu@gmail.com',6.2,'alumno','2006'),(1015,4,'password_15','Violeta','Quintana','F','14/05/2005','Francisco Javier Mina 61\nDel Carmen\nCoyoac?n\n04100 Ciudad de M?xico, CDMX','7775','5529068884','violqui@gmail.com',9.4,'alumno','2005'),(1016,4,'password_16','Fidel','Santos','M','13/06/2005','Ignacio Aldama #74, Berl?n Esquina, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX','7575','5529368877','fidelsa@gmail.com',8.6,'alumno','2005'),(1017,4,'password_17','Giovanni','Olivera','M','13/07/2005','Abasolo 178-172, Del Carmen, Coyoac?n, 04100 Ciudad de M?xico, CDMX','4575','5529668870','giovannOli@gmail.com',7.8,'alumno','2005'),(1018,4,'password_18','Nestor','Martinez','M','12/08/2005','Segunda Cda. Parque 6-4\nGral Anaya\nBenito Ju?rez\n03340 Ciudad de M?xico, CDMX','5757','5529968863','nesmart@gmail.com',7,'alumno','2005'),(1019,4,'password_19','Olalla','Garcia','M','11/09/2005','\nSan Pedro 157\nDel Carmen\nCoyoac?n\n04100 Ciudad de M?xico, CDMX','5757','5530268856','olaGra@gmail.com',6.2,'alumno','2005');
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +92,7 @@ DROP TABLE IF EXISTS `grupos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `grupos` (
   `id_grupo` int(4) NOT NULL AUTO_INCREMENT,
-  `grado` int(1) DEFAULT NULL,
+  `grado` varchar(1) DEFAULT NULL,
   PRIMARY KEY (`id_grupo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -102,7 +103,7 @@ CREATE TABLE `grupos` (
 
 LOCK TABLES `grupos` WRITE;
 /*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
-INSERT INTO `grupos` VALUES (1,1),(2,1),(3,3),(4,4);
+INSERT INTO `grupos` VALUES (1,'1'),(2,'1'),(3,'3'),(4,'4');
 /*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +166,7 @@ CREATE TABLE `materiashorarios` (
 
 LOCK TABLES `materiashorarios` WRITE;
 /*!40000 ALTER TABLE `materiashorarios` DISABLE KEYS */;
-INSERT INTO `materiashorarios` VALUES (1,1,1,1,1,'7:00-8:30 AM','L-M-V\r'),(2,2,2,1,1,'8:30-10:00 AM','M-J\r'),(3,3,3,1,2,'10:00-11:30 AM','L-M-V\r'),(4,4,4,1,2,'11:30-13:00 AM','M-J\r'),(5,5,5,2,3,'7:00-8:30 AM','L-M-V\r'),(6,6,6,2,3,'8:30-10:00 AM','M-J\r'),(7,7,7,2,4,'10:00-11:30 AM','L-M-V\r'),(8,8,8,2,4,'11:30-13:00 AM','M-J\r'),(9,9,9,3,5,'7:00-8:30 AM','L-M-V\r'),(10,10,10,3,6,'8:30-10:00 AM','M-J\r'),(11,11,11,3,7,'10:00-11:30 AM','L-M-V\r'),(12,12,12,3,8,'11:30-13:00 AM','M-J\r'),(13,13,10,4,9,'7:00-8:30 AM','L-M-V\r'),(14,11,11,4,10,'8:30-10:00 AM','M-J\r'),(15,12,12,4,11,'10:00-11:30 AM','L-M-V\r'),(16,13,1,4,9,'11:30-13:00 AM','M-J');
+INSERT INTO `materiashorarios` VALUES (1,1,100,1,1,'7:00-8:30 AM','L-M-V\r'),(2,2,101,1,1,'8:30-10:00 AM','M-J\r'),(3,3,102,1,2,'10:00-11:30 AM','L-M-V\r'),(4,4,103,1,2,'11:30-13:00 AM','M-J\r'),(5,5,104,2,3,'7:00-8:30 AM','L-M-V\r'),(6,6,105,2,3,'8:30-10:00 AM','M-J\r'),(7,7,106,2,4,'10:00-11:30 AM','L-M-V\r'),(8,8,107,2,4,'11:30-13:00 AM','M-J\r'),(9,9,108,3,5,'7:00-8:30 AM','L-M-V\r'),(10,10,109,3,6,'8:30-10:00 AM','M-J\r'),(11,11,110,3,7,'10:00-11:30 AM','L-M-V\r'),(12,12,111,3,8,'11:30-13:00 AM','M-J\r'),(13,13,109,4,9,'7:00-8:30 AM','L-M-V\r'),(14,11,110,4,10,'8:30-10:00 AM','M-J\r'),(15,12,111,4,11,'10:00-11:30 AM','L-M-V\r'),(16,13,100,4,9,'11:30-13:00 AM','M-J\r');
 /*!40000 ALTER TABLE `materiashorarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,16 +179,17 @@ DROP TABLE IF EXISTS `profesores`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesores` (
   `id_numCuentaProf` int(4) NOT NULL AUTO_INCREMENT,
+  `passwordProf` varchar(20) DEFAULT NULL,
   `nombreProf` varchar(60) DEFAULT NULL,
   `apellidoProf` varchar(60) DEFAULT NULL,
   `sexoProf` varchar(1) DEFAULT NULL,
   `fechaNacProf` varchar(20) DEFAULT NULL,
   `direccionProf` varchar(150) DEFAULT NULL,
-  `cpProf` int(4) DEFAULT NULL,
+  `cpProf` varchar(4) DEFAULT NULL,
   `telefonoProf` varchar(25) DEFAULT NULL,
   `correoProf` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id_numCuentaProf`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -196,7 +198,7 @@ CREATE TABLE `profesores` (
 
 LOCK TABLES `profesores` WRITE;
 /*!40000 ALTER TABLE `profesores` DISABLE KEYS */;
-INSERT INTO `profesores` VALUES (1,'Fabiola','Hernandez','F','14/05/1989','Moctezuma 2da Secc, Ciudad de M?xico, CDMX',56345,'5525659589','hdez@gmail.com\r'),(2,'Erika','Guzman','F','01/05/1990','C. U. Benito Ju?rez, 06760 Ciudad de M?xico, CDMX',57895,'5583854514','gzmna@gmail.com\r'),(3,'Juan','Ramirez','M','26/04/1970','Portales Nte, Ciudad de M?xico, CDMX',59445,'5642049439','rmasd@gmail.com\r'),(4,'Hector','Preciado','M','17/11/1985','Bramadero Ramos Mill?n, Ciudad de M?xico, CDMX',60995,'5700244364','htpre@gmail.com\r'),(5,'Pedro','Hernandez','M','08/10/1988','San Lucas, 09000 Ciudad de M?xico, CDMX',62545,'5758439289','pehredf@gmail.com\r'),(6,'Maria','Osorio','F','29/11/1980','Pedregal de Sta ?rsula, Ciudad de M?xico, CDMX',64095,'5816634214','mariori@gmail.com\r'),(7,'Susana','Hurtado','F','10/06/1968','Los Reyes, 04330 Ciudad de M?xico, CDMX',65645,'5874829139','hurma@gmail.com\r'),(8,'Mercedes','Naranjo','F','21/03/1993','Granjas San Antonio, 09070 Ciudad de M?xico, CDMX',67195,'5933024064','mercnara@gmail.com\r'),(9,'Julio','Rios','M','07/02/1975','Colonia Centro, Centro, Ciudad de M?xico, CDMX',68745,'5991218989','riosjul@gmail.com\r'),(10,'Alejandro','Valle','M','13/08/1959','Lomas de los ?ngeles Tetelpan, 01790 Ciudad de M?xico, CDMX',70295,'6049413914','aljvalles@gmail.com\r'),(11,'Alberto','Cruz','M','04/05/1986','Camino a Santa Ursula, Sta ?rsula Xitla, Tlalpan, 14420 Ciudad de M?xico, CDMX',71845,'6107608839','albrxrcza@gmail.com\r'),(12,'Sonia','Maya','F','15/01/1992','Cda. Nahoas, Tlalcoligia, Tlalpan, 14430 Ciudad de M?xico, CDMX',73395,'6165803764','simomaya@gmail.com\r');
+INSERT INTO `profesores` VALUES (100,'password_0','Fabiola','Hernandez','F','14/05/1989','Moctezuma 2da Secc, Ciudad de M?xico, CDMX','5634','5525659589','hdez@gmail.com\r'),(101,'password_1','Erika','Guzman','F','01/05/1990','C. U. Benito Ju?rez, 06760 Ciudad de M?xico, CDMX','5789','5583854514','gzmna@gmail.com\r'),(102,'password_2','Juan','Ramirez','M','26/04/1970','Portales Nte, Ciudad de M?xico, CDMX','5944','5642049439','rmasd@gmail.com\r'),(103,'password_3','Hector','Preciado','M','17/11/1985','Bramadero Ramos Mill?n, Ciudad de M?xico, CDMX','6099','5700244364','htpre@gmail.com\r'),(104,'password_4','Pedro','Hernandez','M','08/10/1988','San Lucas, 09000 Ciudad de M?xico, CDMX','6254','5758439289','pehredf@gmail.com\r'),(105,'password_5','Maria','Osorio','F','29/11/1980','Pedregal de Sta ?rsula, Ciudad de M?xico, CDMX','6409','5816634214','mariori@gmail.com\r'),(106,'password_6','Susana','Hurtado','F','10/06/1968','Los Reyes, 04330 Ciudad de M?xico, CDMX','6564','5874829139','hurma@gmail.com\r'),(107,'password_7','Mercedes','Naranjo','F','21/03/1993','Granjas San Antonio, 09070 Ciudad de M?xico, CDMX','6719','5933024064','mercnara@gmail.com\r'),(108,'password_8','Julio','Rios','M','07/02/1975','Colonia Centro, Centro, Ciudad de M?xico, CDMX','6874','5991218989','riosjul@gmail.com\r'),(109,'password_9','Alejandro','Valle','M','13/08/1959','Lomas de los ?ngeles Tetelpan, 01790 Ciudad de M?xico, CDMX','7029','6049413914','aljvalles@gmail.com\r'),(110,'password_10','Alberto','Cruz','M','04/05/1986','Camino a Santa Ursula, Sta ?rsula Xitla, Tlalpan, 14420 Ciudad de M?xico, CDMX','7184','6107608839','albrxrcza@gmail.com\r'),(111,'password_11','Sonia','Maya','F','15/01/1992','Cda. Nahoas, Tlalcoligia, Tlalpan, 14430 Ciudad de M?xico, CDMX','7339','6165803764','simomaya@gmail.com\r');
 /*!40000 ALTER TABLE `profesores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-19 14:47:14
+-- Dump completed on 2021-01-22 12:57:01
