@@ -8,19 +8,19 @@ USE escuela;
 -- Crear tablas
 CREATE TABLE alumnos (
     id_numCuenta INT(4) NOT NULL AUTO_INCREMENT,
-    id_grupo1 INT(4) NOT NULL,
-    password VARCHAR(20),
+    id_grupo1 INT(4) DEFAULT NULL,
     nombre VARCHAR(60) ,
     apellido VARCHAR(60) ,
     sexo VARCHAR(1) ,
     fechaNacAlum VARCHAR(20) ,
     direccion VARCHAR(150),
-    cp VARCHAR(4),
+    cp VARCHAR(5),
     telefono VARCHAR(25),
     correo VARCHAR(60),
     promedio FLOAT(3) ,
     estatus VARCHAR(15) ,
     generacion VARCHAR(4) ,
+    passwords VARCHAR(60),
     PRIMARY KEY (id_numcuenta)
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE alumnoMaterias (
 
 CREATE TABLE grupos (
     id_grupo INT(4) NOT NULL AUTO_INCREMENT,
-    grado VARCHAR(1) ,
+    grado INT(1) ,
     PRIMARY KEY (id_grupo)
 );
 
@@ -67,15 +67,15 @@ CREATE TABLE materiasHorarios (
 
 CREATE TABLE profesores (
     id_numCuentaProf INT(4) NOT NULL AUTO_INCREMENT,
-    passwordProf VARCHAR(20),
     nombreProf VARCHAR(60) ,
     apellidoProf VARCHAR(60) ,
     sexoProf VARCHAR(1) ,
     fechaNacProf VARCHAR(20) ,
     direccionProf VARCHAR(150),
-    cpProf VARCHAR(4),
+    cpProf VARCHAR(5),
     telefonoProf VARCHAR(25),
     correoProf VARCHAR(60),
+    passwords VARCHAR(60),
     PRIMARY KEY (id_numCuentaProf)
 );
 
@@ -139,14 +139,3 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
-
-
-
-
-
-
-
-
-
-
-
