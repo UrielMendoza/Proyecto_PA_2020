@@ -16,10 +16,13 @@ public class Salones {
     @Column(name="id_salon")
     private Integer idSalon;
     
+	@Column(name="edificio")
     private String edificio;
     
+	@Column(name="laboratorio")
     private String laboratorio;
     
+	@Column(name="cupo")
     private int cupo;
 
     @Override

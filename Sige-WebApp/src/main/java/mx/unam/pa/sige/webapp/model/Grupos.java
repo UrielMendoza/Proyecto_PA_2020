@@ -16,6 +16,7 @@ public class Grupos {
     @Column(name="id_grupo")
     private Integer idGrupos;
     
+	@Column(name="grado")
     private int grado;
 
     @Override

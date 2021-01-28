@@ -7,9 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mx.unam.pa.sige.webapp.dao.AlumnosDAO;
+import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.Alumnos;
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 import mx.unam.pa.sige.webapp.forms.PasswordForm;
 import mx.unam.pa.sige.webapp.forms.LoginForm;
+import mx.unam.pa.sige.webapp.model.Grupos;
 
 @Service
 @Transactional
@@ -33,10 +36,14 @@ public class AlumnosServiceImpl implements AlumnosService{
 
 	@Override
 	public Alumnos guardarAlumno(PasswordForm formPassword) {
+		Grupos grupo = new Grupos();
+		grupo.setIdGrupo(formPassword.getIdGrupo());
+		grupo.setGrado(1);
+		
 		Alumnos nuevoAlumno = new Alumnos(formPassword.getCorreo(),formPassword.getNombre(),
 					formPassword.getApellido(),formPassword.getTelefono(),formPassword.getSexo(),
 					formPassword.getDireccion(),formPassword.getCp(),formPassword.getFechaNac(),
-					formPassword.getPassword());
+					formPassword.getPassword(),grupo);
 		Integer idAlumno = dao.saveAlumno(nuevoAlumno);
 		return dao.getAlumnos(idAlumno);
 	}
@@ -55,4 +62,14 @@ public class AlumnosServiceImpl implements AlumnosService{
 	public Alumnos obtenerAlumnos(Integer idAlumno) {
 		return dao.getAlumnos(idAlumno);
 	}
+	
+	@Override
+	public List<AlumnoMaterias> listarMateriasAlumno(Integer IdAlumno) {
+		return dao.getAllMateriasAlumno(IdAlumno);
+	};
+	
+	@Override
+	public List<MateriasHorarios> listarGrupoAlumno(Integer idGrupos){
+		return dao.getGrupoAlumno(idGrupos);
+	};
 }

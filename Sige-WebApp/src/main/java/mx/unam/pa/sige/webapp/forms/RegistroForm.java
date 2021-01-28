@@ -5,6 +5,8 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 
+//import mx.unam.pa.sige.webapp.model.Grupos;
+
 public class RegistroForm {
 	private static final String REGEX_SOLO_LETRAS = "^[\\pL\\pM\\p{Zs}.-]+$";
 
@@ -35,6 +37,12 @@ public class RegistroForm {
 	@Pattern(regexp = "[0-9]{8,10}", message = "Teléfono. Solo números, longitud de 8 a 10 dígitos")
 	private String telefono;
 	
+	@NotNull
+	private Integer idGrupo;
+	
+	private String estatus = "alumno";
+	
+	private String generacion = "2021";
 	
 	/**
 	 * Constructor sin argumentos
@@ -53,7 +61,7 @@ public class RegistroForm {
 	 * @param fechaNac
 	 */
 	public RegistroForm(String correo, String nombre, String apellido, String telefono, String sexo, 
-			String direccion, String cp, String fechaNac) {
+			String direccion, String cp, String fechaNac, Integer idGrupo, String estatus, String generacion) {
 		this.correo = correo;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -62,6 +70,10 @@ public class RegistroForm {
 		this.direccion = direccion;
 		this.cp = cp;
 		this.fechaNac = fechaNac;
+		this.idGrupo = idGrupo;
+		this.estatus = estatus;
+		this.generacion = generacion;
+		
 	}
 
 	public String getCorreo() {
@@ -118,8 +130,7 @@ public class RegistroForm {
 	
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
-	}
-	
+	}	
 
 	public String getCp() {
 		return cp;
@@ -127,6 +138,30 @@ public class RegistroForm {
 	
 	public void setCp(String cp) {
 		this.cp = cp;
+	}
+	
+	public Integer getIdGrupo() {
+		return idGrupo;
+	}
+	
+	public void setIdGrupo(Integer idGrupo) {
+		this.idGrupo = idGrupo;
+	}
+	
+	public String getEstatus() {
+		return estatus;
+	}
+	
+	public void setEstatus(String estatus) {
+		this.estatus = estatus;
+	}
+	
+	public String getGeneracion() {
+		return generacion;
+	}
+	
+	public void setGeneracion(String generacion) {
+		this.generacion = generacion;
 	}
 
 	@Override

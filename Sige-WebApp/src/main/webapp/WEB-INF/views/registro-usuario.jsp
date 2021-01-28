@@ -65,6 +65,41 @@
 				<td><form:input path="password" /></td>
 				<td><form:errors path="password" cssClass="error" /></td>
 			</tr>
+			<table>
+			<thead>
+				<tr>
+					<td>Grupos</td>
+				</tr>
+			</thead>
+			<c:forEach var="grupoPrimeroFirmado" items="${gruposPrimeroFirmado}">
+				<tr>
+					<td><form:radiobutton path="idGrupo" value="${grupoPrimeroFirmado.idGrupo}"/>Grupo</td>
+					<td>${grupoPrimeroFirmado}</td>
+					<!--  	
+					<thead>
+						<tr>
+							<td>idMateriaHorarios</td>
+							<td>materia</td>
+							<td>profesor</td>
+							<td>salon</td>
+							<td>laboratorio</td>
+							<td>horario</td>
+							<td>dias</td>
+						</tr>
+					</thead>
+					<tr>
+						<td>${materiaHorariosPrimeroFirmado.idMateriasHorarios}</td>
+						<td>${materiaHorariosPrimeroFirmado.materia.nombre}</td>
+						<td>${materiaHorariosPrimeroFirmado.profesor.nombreProf}</td>
+						<td>${materiaHorariosPrimeroFirmado.salon.edificio}</td>
+						<td>${materiaHorariosPrimeroFirmado.materia.laboratorio}</td>
+						<td>${materiaHorariosPrimeroFirmado.horario}</td>
+						<td>${materiaHorariosPrimeroFirmado.dias}</td>
+					</tr>
+					-->
+				</tr>
+			</c:forEach>
+			</table>
 			<tr>
 				<td colspan="2"><input type="submit" value="Registrar" /></td>
 			</tr>

@@ -16,21 +16,28 @@ public class Profesores {
     @Column(name="id_numCuentaProf")
     private Integer idProf;
     
+	@Column(name="nombreProf")
     private String nombreProf;
     
+	@Column(name="apellidoProf")
     private String apellidoProf;
     
+	@Column(name="sexoProf")
     private String sexoProf;
     
     @Column(name="fechaNacProf")
     private String fechaNac;
     
+	@Column(name="direccionProf")
     private String direccionProf;
     
+	@Column(name="cpProf")
     private String cpProf;
     
+	@Column(name="telefonoProf")
     private String telefonoProf;
     
+	@Column(name="correoProf")
     private String correoProf;
     
     @Column(name="passwords")

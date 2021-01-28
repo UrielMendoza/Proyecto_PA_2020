@@ -42,14 +42,43 @@ public class GruposDAOImpl implements GruposDAO{
 		 * requerimiento de conversión adicional 
 		 */
 		Query<Grupos> query = session.createQuery(criteria);
-		List<Grupos> usuarios = query.getResultList();
+		List<Grupos> grupos = query.getResultList();
 		
 		// Commit de la transacción
 		//session.getTransaction().commit();
 		
-		return usuarios;
+		return grupos;
 	}
 
+	@Override
+	public List<Grupos> getAllGruposByGrado(Integer grado){
+		Session session = sessionFactory.getCurrentSession();
+		//session.beginTransaction();
+		
+		CriteriaBuilder builder = session.getCriteriaBuilder();
+		
+		// Se indica al constructor del criterio que el resultado esperado es de tipo Grupos
+		CriteriaQuery<Grupos> criteria = builder.createQuery(Grupos.class);
+		
+		/* 
+		 * La raíz es la referencia al objeto mapeado, en este caso, la raíz es la referencia 
+		 * al objeto Grupos
+		 */
+		Root<Grupos> root = criteria.from(Grupos.class);
+		criteria.select(root).where(builder.equal(root.get("grado"), grado));;
+		
+		/* 
+		 * El listado de objetos devuelto getResultList() corresponde al esperado sin
+		 * requerimiento de conversión adicional 
+		 */
+		Query<Grupos> query = session.createQuery(criteria);
+		List<Grupos> grupos = query.getResultList();
+		
+		// Commit de la transacción
+		//session.getTransaction().commit();
+		
+		return grupos;
+	};
 	@Override
 	public void save(Grupos grupo) {
 		sessionFactory.getCurrentSession().save(grupo);

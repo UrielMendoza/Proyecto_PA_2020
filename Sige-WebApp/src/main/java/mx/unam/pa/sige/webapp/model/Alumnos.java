@@ -19,31 +19,41 @@ public class Alumnos {
     @Column(name="id_numCuenta")
     private Integer idAlumno;
 	
+	@Column(name="nombre")
 	private String nombre;
     
+	@Column(name="apellido")
     private String apellido;
     
+	@Column(name="sexo")
     private String sexo;
     
     @Column(name="fechaNacAlum")
     private String fechaNac;
     
+    @Column(name="promedio")
     private float promedio;
     
     @JoinColumn(name="id_grupo1",referencedColumnName="id_grupo",nullable=true)
     @ManyToOne(cascade = CascadeType.ALL)
     private Grupos grupo;
     
+    @Column(name="estatus")
     private String estatus;
     
+    @Column(name="generacion")
     private int generacion;
     
+    @Column(name="direccion")
     private String direccion;
     
+    @Column(name="cp")
     private String cp;
     
+    @Column(name="telefono")
     private String telefono;
     
+    @Column(name="correo")
     private String correo;
     
     @Column(name="passwords")
@@ -62,7 +72,7 @@ public class Alumnos {
     }
     
     public Alumnos(String correo, String nombre, String apellido, String telefono, String sexo, 
-			String direccion, String cp, String fechaNac, String password) {
+			String direccion, String cp, String fechaNac, String password, Grupos grupo) {
 		this.correo = correo;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -72,6 +82,7 @@ public class Alumnos {
 		this.cp = cp;
 		this.fechaNac = fechaNac;
 		this.password = password;
+		this.grupo = grupo;
     }
 
     public Integer getIdAlumno() {

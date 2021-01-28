@@ -1,15 +1,16 @@
 package mx.unam.pa.sige.webapp.forms;
+//import mx.unam.pa.sige.webapp.model.Grupos;
 
 public class PasswordForm extends RegistroForm{
 	private String tipoUsuario="A";
 	
 	private String password;
-
+	
 	public PasswordForm() {}
 
 	public PasswordForm(String correo, String nombre, String apellido, String telefono, String sexo, 
-			String direccion, String cp, String fechaNac, String nuevoPassword) {
-		super(correo, nombre, apellido, telefono, sexo, direccion, cp, fechaNac);
+			String direccion, String cp, String fechaNac, String nuevoPassword,Integer idGrupo, String estatus, String generacion) {
+		super(correo, nombre, apellido, telefono, sexo, direccion, cp, fechaNac, idGrupo, estatus, generacion);
 		this.password = nuevoPassword;
 	}
 

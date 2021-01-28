@@ -8,6 +8,8 @@ public interface GruposDAO {
 	
 	public List<Grupos> getAllGrupos();
 	
+	public List<Grupos> getAllGruposByGrado(Integer grado);
+	
 	public void save(Grupos grupo);
 	
 	public Grupos getGrupos(Integer idGrupo );

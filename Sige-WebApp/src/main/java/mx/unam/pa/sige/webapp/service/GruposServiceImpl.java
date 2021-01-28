@@ -19,6 +19,11 @@ public class GruposServiceImpl implements GruposService{
 	public List<Grupos> listarGrupos() {
 		return dao.getAllGrupos();
 	}
+	
+	@Override
+	public List<Grupos> listarGruposByGrado(Integer grado){
+		return dao.getAllGruposByGrado(grado);
+	};
 
 	@Override
 	public void guardar(Grupos grupo) {

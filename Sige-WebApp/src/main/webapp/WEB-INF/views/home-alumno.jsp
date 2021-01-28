@@ -7,7 +7,7 @@
 <title>Home de usuario</title>
 </head>
 <body>
-	<p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
+	<!--<p>${usuarioFirmado.grupo},</p>-->
 	<%--
 	<p>&iquest;Qu&eacute; deseas hacer?</p>
 	<p><a href="/web-biblioteca/spring/libro/listar">Buscar libros</a></p>
@@ -16,8 +16,8 @@
       <tr>
         <td>
           <ul style="list-style-type:none">
-            <li><a href="#">Grupos</a></li>
-            <li><a href="#">Mis materias</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
             <li><a href="#">Información de la escuela </a></li>
             <li><a href="#">Información personal</a></li>
           </ul>
@@ -25,5 +25,6 @@
         <td><!-- Desplegar tabla de alumnos --></td>
       </tr>
     </table>
+    <p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
 </body>
 </html>

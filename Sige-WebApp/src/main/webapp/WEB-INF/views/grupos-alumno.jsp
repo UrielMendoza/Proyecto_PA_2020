@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Home de usuario</title>
+<title>Materias Alumno</title>
 </head>
 <body>
 	<!--<p>${usuarioFirmado.grupo},</p>-->
@@ -21,10 +22,35 @@
             <li><a href="#">Información de la escuela </a></li>
             <li><a href="#">Información personal</a></li>
           </ul>
-        </td>
-        <td><!-- Desplegar tabla de alumnos --></td>
+        </td>        
       </tr>
     </table>
-    <p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
+    <p>Grupo inscrito de ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
+	<p>${usuarioFirmado.grupo}</p>
+    <table>
+			<thead>
+				<tr>
+					<td>idMateriaHorarios</td>
+					<td>materia</td>
+					<td>profesor</td>
+					<td>salon</td>
+					<td>laboratorio</td>
+					<td>horario</td>
+					<td>dias</td>
+				</tr>
+			</thead>
+		<c:forEach var="grupoAlumno" items="${gruposAlumno}">
+			<tr>
+				<td>${grupoAlumno.idMateriasHorarios}</td>
+				<td>${grupoAlumno.materia.nombre}</td>
+				<td>${grupoAlumno.profesor.nombreProf} ${grupoAlumno.profesor.apellidoProf}</td>
+				<td>${grupoAlumno.salon.edificio}${grupoAlumno.salon.idSalon}</td>
+				<td>${grupoAlumno.materia.laboratorio}</td>
+				<td>${grupoAlumno.horario}</td>
+				<td>${grupoAlumno.dias}</td>
+			</tr>
+		</c:forEach>
+		</table>
+		<a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar"><button>Cambiar grupo</button></a>
 </body>
 </html>

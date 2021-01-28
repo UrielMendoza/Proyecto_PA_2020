@@ -7,6 +7,8 @@ import mx.unam.pa.sige.webapp.model.Grupos;
 public interface GruposService {
 	public List<Grupos> listarGrupos();
 	
+	public List<Grupos> listarGruposByGrado(Integer grado);
+	
 	public void guardar(Grupos grupo);
 	
 	public void eliminar(Grupos grupo);

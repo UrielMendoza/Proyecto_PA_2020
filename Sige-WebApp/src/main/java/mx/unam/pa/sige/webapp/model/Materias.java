@@ -19,8 +19,10 @@ public class Materias {
     @Column(name="nombreMateria")
     private String nombre;
     
+    @Column(name="descripcion")
     private String descripcion;
     
+    @Column(name="laboratorio")
     private String laboratorio;
 
     @Override

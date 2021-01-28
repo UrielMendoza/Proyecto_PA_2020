@@ -23,8 +23,10 @@ public class MateriasHorarios {
     @ManyToOne(cascade = CascadeType.ALL)
     private Materias materia;
     
+    @Column(name="horario")
     private String horario;
     
+    @Column(name="dias")
     private String dias;
     
     @JoinColumn(name="id_numCuentaProf1",referencedColumnName="id_numCuentaProf")

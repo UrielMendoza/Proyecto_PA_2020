@@ -3,6 +3,8 @@ package mx.unam.pa.sige.webapp.dao;
 import java.util.List;
 
 import mx.unam.pa.sige.webapp.model.Alumnos;
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
+import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 
 public interface AlumnosDAO {
 	
@@ -17,5 +19,9 @@ public interface AlumnosDAO {
 	public void delete(Alumnos alumno);
 	
 	public void edit(Alumnos alumno);
+	
+	public List<AlumnoMaterias> getAllMateriasAlumno(Integer idAlumno);
+	
+	public List<MateriasHorarios> getGrupoAlumno(Integer idGrupos);
 
 }
