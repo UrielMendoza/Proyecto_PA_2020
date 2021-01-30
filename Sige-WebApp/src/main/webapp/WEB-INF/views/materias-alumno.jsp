@@ -32,6 +32,7 @@
 					<td>idAlumnoMaterias</td>
 					<td>alumno</td>
 					<td>grupo</td>
+					<td>grado</td>
 					<td>idMateriasHorarios</td>
 					<td>materia</td>
 					<td>profesor</td>
@@ -46,7 +47,8 @@
 			<tr>
 				<td>${alumnoMateria.idAlumnoMaterias}</td>
 				<td>${alumnoMateria.alumno.nombre} ${alumnoMateria.alumno.apellido}</td>			
-				<td>${alumnoMateria.alumno.grupo}</td>
+				<td>${alumnoMateria.alumno.grupo.idGrupo}</td>
+				<td>${alumnoMateria.alumno.grupo.grado}</td>
 				<td>${alumnoMateria.materiaHorario.idMateriasHorarios}</td>
 				<td>${alumnoMateria.materiaHorario.materia.nombre}</td>
 				<td>${alumnoMateria.materiaHorario.profesor.nombreProf} ${alumnoMateria.materiaHorario.profesor.apellidoProf}</td>

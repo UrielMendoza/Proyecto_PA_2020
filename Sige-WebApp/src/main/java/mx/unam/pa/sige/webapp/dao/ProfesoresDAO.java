@@ -2,7 +2,9 @@ package mx.unam.pa.sige.webapp.dao;
 
 import java.util.List;
 
+import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.Profesores;
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 
 public interface ProfesoresDAO {
 	
@@ -17,5 +19,7 @@ public interface ProfesoresDAO {
 	public void delete(Profesores profesor);
 	
 	public void edit(Profesores profesor);
+	
+	public List<MateriasHorarios> getAllMateriasProfesor(Integer idProf);
 
 }

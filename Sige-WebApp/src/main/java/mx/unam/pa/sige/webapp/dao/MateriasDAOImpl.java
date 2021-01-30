@@ -42,12 +42,12 @@ public class MateriasDAOImpl implements MateriasDAO{
 		 * requerimiento de conversión adicional 
 		 */
 		Query<Materias> query = session.createQuery(criteria);
-		List<Materias> usuarios = query.getResultList();
+		List<Materias> materias = query.getResultList();
 		
 		// Commit de la transacción
 		//session.getTransaction().commit();
 		
-		return usuarios;
+		return materias;
 	}
 
 	@Override

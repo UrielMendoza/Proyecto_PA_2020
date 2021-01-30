@@ -41,12 +41,12 @@ public class SalonesDAOImpl implements SalonesDAO{
 		 * requerimiento de conversión adicional 
 		 */
 		Query<Salones> query = session.createQuery(criteria);
-		List<Salones> usuarios = query.getResultList();
+		List<Salones> salones = query.getResultList();
 		
 		// Commit de la transacción
 		//session.getTransaction().commit();
 		
-		return usuarios;
+		return salones;
 	}
 
 	@Override

@@ -12,7 +12,7 @@
       <tr>
         <td>
           <ul style="list-style-type:none">
-            <li><a href="#">Grupos</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor/listar">Materias impartidas</a></li>
             <li><a href="#">Mis materias</a></li>
             <li><a href="#">Información de la escuela </a></li>
             <li><a href="#">Información personal</a></li>

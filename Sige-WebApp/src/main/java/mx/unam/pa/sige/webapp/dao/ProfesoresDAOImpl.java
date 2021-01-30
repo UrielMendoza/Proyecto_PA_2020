@@ -11,6 +11,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 import mx.unam.pa.sige.webapp.model.Profesores;
 
 @Repository
@@ -96,5 +98,47 @@ public class ProfesoresDAOImpl implements ProfesoresDAO {
 	@Override
 	public void edit(Profesores profesor) {
 		sessionFactory.getCurrentSession().update(profesor);
+	}
+	
+	@Override
+	public List<MateriasHorarios> getAllMateriasProfesor(Integer idProf){
+		Session session = sessionFactory.getCurrentSession();
+		//session.beginTransaction();
+		
+		CriteriaBuilder builder = session.getCriteriaBuilder();
+		
+		// Se indica al constructor del criterio que el resultado esperado es de tipo Alumnos
+		CriteriaQuery<MateriasHorarios> criteria = builder.createQuery(MateriasHorarios.class);
+		
+		/* 
+		 * La raíz es la referencia al objeto mapeado, en este caso, la raíz es la referencia 
+		 * al objeto Alumnos
+		 */
+		Root<MateriasHorarios> root = criteria.from(MateriasHorarios.class);
+		criteria.select(root).where(builder.equal(root.get("profesor").get("idProf"), idProf));
+		
+		/* 
+		 * El listado de objetos devuelto getResultList() corresponde al esperado sin
+		 * requerimiento de conversión adicional 
+		 */
+		Query<MateriasHorarios> query = session.createQuery(criteria);
+		List<MateriasHorarios> materiasProfesor = query.getResultList();
+		
+		// Commit de la transacción
+		//session.getTransaction().commit();
+		
+		/*
+		Session session = sessionFactory.getCurrentSession();
+		
+		CriteriaBuilder builder = session.getCriteriaBuilder();
+		CriteriaQuery<Libro> criteria = builder.createQuery(Libro.class);
+		Root<Libro> root = criteria.from(Libro.class);
+		root.fetch("genero", JoinType.LEFT);
+		criteria.select(root);
+		Query<Libro> query = session.createQuery(criteria);
+		return query.getResultList();
+		*/
+		
+		return materiasProfesor;
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mx.unam.pa.sige.webapp.dao.ProfesoresDAO;
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 import mx.unam.pa.sige.webapp.model.Profesores;
 import mx.unam.pa.sige.webapp.forms.PasswordForm;
 import mx.unam.pa.sige.webapp.forms.LoginForm;
@@ -56,5 +57,10 @@ public class ProfesoresServiceImpl implements ProfesoresService{
 	public Profesores obtenerProfesores(Integer idProf) {
 		return dao.getProfesores(idProf);
 	}
+	
+	@Override
+	public List<MateriasHorarios> listarMateriasProfesor(Integer idProf){
+		return dao.getAllMateriasProfesor(idProf);
+	} 
 
 }

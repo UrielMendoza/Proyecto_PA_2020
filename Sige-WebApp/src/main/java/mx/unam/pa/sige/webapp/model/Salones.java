@@ -23,7 +23,7 @@ public class Salones {
     private String laboratorio;
     
 	@Column(name="cupo")
-    private int cupo;
+    private Integer cupo;
 
     @Override
     public String toString() {
@@ -67,7 +67,7 @@ public class Salones {
         return cupo;
     }
 
-    public void setCupo(int cupo) {
+    public void setCupo(Integer cupo) {
         this.cupo = cupo;
     }
 

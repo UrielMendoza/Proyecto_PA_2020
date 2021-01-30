@@ -26,7 +26,8 @@
       </tr>
     </table>
     <p>Grupo inscrito de ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
-	<p>${usuarioFirmado.grupo}</p>
+	<p>Grupo: ${usuarioFirmado.grupo.idGrupo}</p>
+	<p>Grado: ${usuarioFirmado.grupo.grado}</p>
     <table>
 			<thead>
 				<tr>
@@ -51,6 +52,6 @@
 			</tr>
 		</c:forEach>
 		</table>
-		<a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar"><button>Cambiar grupo</button></a>
+		<a href="http://localhost:8080/Sige-WebApp/spring/cambiarGrupo"><button>Cambiar grupo</button></a>
 </body>
 </html>

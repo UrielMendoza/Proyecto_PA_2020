@@ -17,8 +17,8 @@
       <tr>
         <td>
           <ul style="list-style-type:none">
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupos</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Mis materias</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
             <li><a href="#">Información de la escuela </a></li>
             <li><a href="#">Información personal</a></li>
           </ul>
@@ -32,6 +32,7 @@
 					<td>idAlumnoMaterias</td>
 					<td>alumno</td>
 					<td>grupo</td>
+					<td>grado</td>
 					<td>idMateriasHorarios</td>
 					<td>materia</td>
 					<td>profesor</td>
@@ -46,7 +47,8 @@
 			<tr>
 				<td>${alumnoMateria.idAlumnoMaterias}</td>
 				<td>${alumnoMateria.alumno.nombre} ${alumnoMateria.alumno.apellido}</td>			
-				<td>${alumnoMateria.alumno.grupo}</td>
+				<td>${alumnoMateria.alumno.grupo.idGrupo}</td>
+				<td>${alumnoMateria.alumno.grupo.grado}</td>
 				<td>${alumnoMateria.materiaHorario.idMateriasHorarios}</td>
 				<td>${alumnoMateria.materiaHorario.materia.nombre}</td>
 				<td>${alumnoMateria.materiaHorario.profesor.nombreProf} ${alumnoMateria.materiaHorario.profesor.apellidoProf}</td>

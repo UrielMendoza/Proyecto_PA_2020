@@ -53,6 +53,16 @@ public class MateriasHorarios {
     public MateriasHorarios(Integer idMateriasHorarios) {
         this.idMateriasHorarios = idMateriasHorarios;
     }
+    
+    public MateriasHorarios(Materias materia, String horario, String dias, Profesores profesor, Grupos grupo, 
+			Salones salon) {
+		this.materia = materia;
+		this.horario = horario;
+		this.dias = dias;
+		this.profesor = profesor;
+		this.grupo = grupo;
+		this.salon = salon;
+    }
 
     public Integer getIdMateriasHorarios() {
         return idMateriasHorarios;
