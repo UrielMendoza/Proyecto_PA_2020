@@ -26,6 +26,7 @@ D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\forms\LoginForm.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\config\WebMvcConfig.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\dao\AlumnosDAOImpl.java
+D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\forms\BajaMateriaForm.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\model\MateriasHorarios.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\service\MateriasService.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\dao\GruposDAO.java
@@ -44,6 +45,7 @@ D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\service\AlumnoMateriasServiceImpl.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\dao\MateriasDAOImpl.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\forms\CambioGrupoForm.java
+D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\controller\BajaMateriaController.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\service\MateriasServiceImpl.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\service\MateriasHorariosService.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\model\Salones.java

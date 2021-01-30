@@ -68,13 +68,15 @@
 			<table>
 			<thead>
 				<tr>
-					<td>Grupos</td>
+					<td>Grupo</td>
+					<td>Grado</td>
 				</tr>
 			</thead>
 			<c:forEach var="grupoPrimeroFirmado" items="${gruposPrimeroFirmado}">
 				<tr>
 					<td><form:radiobutton path="idGrupo" value="${grupoPrimeroFirmado.idGrupo}"/>Grupo</td>
-					<td>${grupoPrimeroFirmado}</td>
+					<td>${grupoPrimeroFirmado.idGrupo}</td>
+					<td>${grupoPrimeroFirmado.grado}</td>
 					<!--  	
 					<thead>
 						<tr>

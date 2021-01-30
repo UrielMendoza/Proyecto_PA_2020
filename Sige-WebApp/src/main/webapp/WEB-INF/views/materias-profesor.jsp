@@ -47,5 +47,6 @@
 		</c:forEach>
 		</table>
 		<a href="http://localhost:8080/Sige-WebApp/spring/altaMateria"><button>Alta materia</button></a>
+		<a href="http://localhost:8080/Sige-WebApp/spring/bajaMateria"><button>Baja materia</button></a>
 </body>
 </html>

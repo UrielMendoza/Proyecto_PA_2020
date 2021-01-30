@@ -22,9 +22,7 @@ public class Grupos {
     @Override
     public String toString() {
         return "Grupos{" + "idGrupos=" + idGrupos + ", grado=" + grado + '}';
-    }
-    
-    
+    }    
 
     public Grupos() {
     }

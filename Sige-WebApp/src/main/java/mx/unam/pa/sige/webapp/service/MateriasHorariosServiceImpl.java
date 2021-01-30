@@ -18,6 +18,7 @@ import mx.unam.pa.sige.webapp.model.Salones;
 import mx.unam.pa.sige.webapp.dao.MateriasDAO;
 import mx.unam.pa.sige.webapp.dao.GruposDAO;
 import mx.unam.pa.sige.webapp.dao.SalonesDAO;
+import mx.unam.pa.sige.webapp.forms.BajaMateriaForm;
 
 @Service
 @Transactional
@@ -47,8 +48,11 @@ public class MateriasHorariosServiceImpl implements MateriasHorariosService{
 	}
 	
 	@Override
-	public void eliminar(MateriasHorarios materiasHorarios) {
-		dao.delete(materiasHorarios);
+	public void eliminar(BajaMateriaForm formBajaMateria) {
+		
+		String materiaBaja = String.valueOf(formBajaMateria.getIdMateriasHorarios());
+		
+		dao.delete(materiaBaja);
 	}
 	
 	@Override

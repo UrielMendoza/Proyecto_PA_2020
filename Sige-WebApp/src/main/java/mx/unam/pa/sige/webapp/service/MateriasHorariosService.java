@@ -3,6 +3,7 @@ package mx.unam.pa.sige.webapp.service;
 import java.util.List;
 
 import mx.unam.pa.sige.webapp.forms.AltaMateriaForm;
+import mx.unam.pa.sige.webapp.forms.BajaMateriaForm;
 import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 import mx.unam.pa.sige.webapp.model.Profesores;
 
@@ -13,7 +14,7 @@ public interface MateriasHorariosService {
 	
 	public void guardar(MateriasHorarios materiasHorarios);
 	
-	public void eliminar(MateriasHorarios materiasHorarios);
+	public void eliminar(BajaMateriaForm formBajaMateria);
 	
 	public  void editar(MateriasHorarios materiasHorarios);
 	

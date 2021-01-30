@@ -14,7 +14,7 @@ public interface MateriasHorariosDAO {
 	
 	public MateriasHorarios getMateriasHorarios(Integer idMateriasHorarios );
 	
-	public void delete(MateriasHorarios idMateriasHorarios);
+	public void delete(String idMateriasHorarios);
 	
-	public void edit(MateriasHorarios idMateriasHorarios);
+	public void edit(MateriasHorarios materiasHorarios);
 }

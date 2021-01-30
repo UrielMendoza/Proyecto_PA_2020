@@ -102,8 +102,15 @@ public class MateriasHorariosDAOImpl implements MateriasHorariosDAO{
 	}
 	
 	
-	public void delete(MateriasHorarios materiasHorarios) {
-		sessionFactory.getCurrentSession().delete(materiasHorarios);
+	public void delete(String idMateriasHorarios) {		
+		Session session = sessionFactory.getCurrentSession();
+		//session.remove(materiasHorarios);
+		
+		session.createNativeQuery("delete from materiasHorarios where id_materiasHorarios = :id")
+		  .setParameter("id", idMateriasHorarios)
+		  .executeUpdate();
+		
+		//session.getTransaction().commit();
 	}
 	
 	public void edit(MateriasHorarios materiasHorarios) {

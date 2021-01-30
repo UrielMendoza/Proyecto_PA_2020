@@ -44,7 +44,7 @@ import mx.unam.pa.sige.webapp.model.Profesores;
  */
 @Controller
 @RequestMapping("/materiasProfesor")
-@SessionAttributes("usuarioFirmado")
+@SessionAttributes(names = {"usuarioFirmado","profesorMateriasFirmado"})
 public class MateriasProfesorController {
 	@Autowired
 	private ProfesoresService profesoresServicio;
