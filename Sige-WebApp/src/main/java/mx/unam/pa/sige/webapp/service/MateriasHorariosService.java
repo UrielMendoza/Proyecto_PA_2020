@@ -12,6 +12,8 @@ public interface MateriasHorariosService {
 	
 	public List<MateriasHorarios> listarMateriasHorariosByGrado(Integer grado);
 	
+	public List<MateriasHorarios> listarMateriasHorariosByGrupo(Integer grupo);
+	
 	public void guardar(MateriasHorarios materiasHorarios);
 	
 	public void eliminar(BajaMateriaForm formBajaMateria);

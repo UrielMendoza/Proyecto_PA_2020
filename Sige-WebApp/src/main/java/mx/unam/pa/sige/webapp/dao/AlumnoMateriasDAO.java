@@ -4,12 +4,13 @@ import java.util.List;
 
 import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.Alumnos;
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 
 public interface AlumnoMateriasDAO {
 	
 	public List<AlumnoMaterias> getAllAlumnoMaterias();
 	
-	public void save(AlumnoMaterias alumnoMaterias);
+	public void saveAlumnoMaterias(AlumnoMaterias alumnoMaterias);
 	
 	public AlumnoMaterias getAlumnoMaterias(Integer idAlumnoMaterias );
 	
@@ -18,4 +19,10 @@ public interface AlumnoMateriasDAO {
 	public void delete(List<AlumnoMaterias> alumnoMaterias);
 	
 	public void edit(AlumnoMaterias alumnoMaterias);
+	
+	public void saveAlumnosInscritos(List<MateriasHorarios> materiasHorarios, Alumnos alumno);
+	
+	public List<AlumnoMaterias> getAllAlumnosMateriasByIdMateriasHorarios(Integer idMateriasHorarios);
+	
+	
 }

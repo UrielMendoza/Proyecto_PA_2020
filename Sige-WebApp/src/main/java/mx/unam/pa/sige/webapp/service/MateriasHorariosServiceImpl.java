@@ -43,6 +43,11 @@ public class MateriasHorariosServiceImpl implements MateriasHorariosService{
 	};
 
 	@Override
+	public List<MateriasHorarios> listarMateriasHorariosByGrupo(Integer grupo){
+		return dao.getAllMateriasHorariosByGrupo(grupo);
+	};
+	
+	@Override
 	public void guardar(MateriasHorarios materiasHorarios) {
 		dao.save(materiasHorarios);
 	}

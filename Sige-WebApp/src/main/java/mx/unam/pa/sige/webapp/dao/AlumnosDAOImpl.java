@@ -94,8 +94,19 @@ public class AlumnosDAOImpl implements AlumnosDAO {
 	}
 	
 	@Override
-	public void delete(Alumnos alumno) {
-		sessionFactory.getCurrentSession().delete(alumno);
+	public void delete(String idAlumno) {
+		Session session = sessionFactory.getCurrentSession();
+		//session.remove(materiasHorarios);
+		
+		session.createNativeQuery("delete from alumnoMaterias where id_numCuenta1 = :id")
+		  .setParameter("id", idAlumno)
+		  .executeUpdate();
+		
+		session.createNativeQuery("delete from alumnos where id_numCuenta = :id")
+		  .setParameter("id", idAlumno)
+		  .executeUpdate();
+		
+		//sessionFactory.getCurrentSession().delete(alumno);
 	}
 	
 	@Override

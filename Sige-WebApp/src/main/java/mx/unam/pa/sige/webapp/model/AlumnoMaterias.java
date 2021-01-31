@@ -42,6 +42,12 @@ public class AlumnoMaterias {
     public AlumnoMaterias(Integer id_alumnoMaterias) {
         this.idAlumnoMaterias = id_alumnoMaterias;
     }
+    
+    public AlumnoMaterias(Alumnos alumno, MateriasHorarios materiaHorario) {
+        this.alumno = alumno;
+        this.materiaHorario = materiaHorario;
+        this.calificacion = -9999.0f;
+    }
 
     public Integer getIdAlumnoMaterias() {
         return idAlumnoMaterias;

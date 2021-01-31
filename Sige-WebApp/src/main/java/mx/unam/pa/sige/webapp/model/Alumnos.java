@@ -42,7 +42,7 @@ public class Alumnos {
     private String estatus;
     
     @Column(name="generacion")
-    private int generacion;
+    private String generacion;
     
     @Column(name="direccion")
     private String direccion;
@@ -83,6 +83,8 @@ public class Alumnos {
 		this.fechaNac = fechaNac;
 		this.password = password;
 		this.grupo = grupo;
+		this.estatus = "alumno";
+		this.generacion = "2021";
     }
 
     public Integer getIdAlumno() {
@@ -149,11 +151,11 @@ public class Alumnos {
         this.estatus = estatus;
     }
 
-    public int getGeneracion() {
+    public String getGeneracion() {
         return generacion;
     }
 
-    public void setGeneracion(int generacion) {
+    public void setGeneracion(String generacion) {
         this.generacion = generacion;
     }
 

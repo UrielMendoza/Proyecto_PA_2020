@@ -16,7 +16,7 @@ public interface AlumnosDAO {
 	
 	public Alumnos getAlumnos(Integer idAlumno );
 	
-	public void delete(Alumnos alumno);
+	public void delete(String idAlumno);
 	
 	public void edit(Alumnos alumno);
 	

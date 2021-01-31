@@ -11,11 +11,13 @@ D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\controller\MateriasAlumnoController.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\forms\AltaMateriaForm.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\service\AlumnosService.java
+D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\controller\BajaAlumnoController.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\controller\AltaMateriaController.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\controller\RegistroController.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\dao\AlumnosDAO.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\service\SalonesService.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\dao\MateriasDAO.java
+D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\forms\MateriaCalificarForm.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\controller\CambiarGrupoController.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\dao\ProfesoresDAOImpl.java
 D:\Documentos\MCIC\Materias\Programacion_Avanzada\Proyecto\Sige-WebApp\src\main\java\mx\unam\pa\sige\webapp\config\HibernateConfig.java

@@ -20,6 +20,7 @@ import mx.unam.pa.sige.webapp.model.Alumnos;
 import mx.unam.pa.sige.webapp.model.Profesores;
 import mx.unam.pa.sige.webapp.model.Grupos;
 import mx.unam.pa.sige.webapp.model.MateriasHorarios;
+import mx.unam.pa.sige.webapp.service.AlumnoMateriasService;
 import mx.unam.pa.sige.webapp.service.AlumnosService;
 import mx.unam.pa.sige.webapp.service.ProfesoresService;
 import mx.unam.pa.sige.webapp.service.GruposService;
@@ -38,6 +39,9 @@ public class RegistroController {
 	private GruposService gruposServicio;
 	@Autowired
 	private MateriasHorariosService materiasHorariosServicio;
+	@Autowired
+	private AlumnoMateriasService alumnosMateriasServicio;
+	
 	
 	@GetMapping("/registro")
 	public ModelAndView mostrarFormaLogin() {
@@ -63,6 +67,8 @@ public class RegistroController {
 		if (tipo.equals("A")) {
 			
 			Alumnos usuarioFirmado = alumnosServicio.guardarAlumno(formPassword); 
+			List<MateriasHorarios> materiasGrupo = materiasHorariosServicio.listarMateriasHorariosByGrupo(idGrupo);			
+			alumnosMateriasServicio.guardarAlumnosInscritos(materiasGrupo, usuarioFirmado);
 			
 			if (usuarioFirmado != null) {
 				view.addObject("usuarioFirmado", usuarioFirmado);

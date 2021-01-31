@@ -2,17 +2,25 @@ package mx.unam.pa.sige.webapp.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import mx.unam.pa.sige.webapp.service.ProfesoresService;
+import mx.unam.pa.sige.webapp.service.AlumnoMateriasService;
+import mx.unam.pa.sige.webapp.forms.AltaMateriaForm;
+import mx.unam.pa.sige.webapp.forms.MateriaCalificarForm;
+import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 import mx.unam.pa.sige.webapp.model.Profesores;
 
@@ -48,6 +56,8 @@ import mx.unam.pa.sige.webapp.model.Profesores;
 public class MateriasProfesorController {
 	@Autowired
 	private ProfesoresService profesoresServicio;
+	@Autowired
+	private AlumnoMateriasService alumnoMateriasServicio;
 	
 	/**
 	 * Listado de todos los libros. 
@@ -68,6 +78,24 @@ public class MateriasProfesorController {
 		return view;
     }
 	
+	
+	@RequestMapping(value="/calificar", method=RequestMethod.POST)
+	public ModelAndView grupoCambiado(@Valid @ModelAttribute("caliMateriaForm") MateriaCalificarForm formCaliMateria,
+			@ModelAttribute("usuarioFirmado") Profesores profesor,@ModelAttribute("profesorMateriasFirmado") MateriasHorarios profesorMaterias,
+			BindingResult resultado, ModelAndView view) {
+		if(resultado.hasErrors()) {
+			view.setViewName("materias-profesor");
+			return view;
+		}
+		
+		List<AlumnoMaterias> alumnoMateriasCali = alumnoMateriasServicio.listarAllAlumnosMateriasByIdMateriasHorarios(formCaliMateria.getIdMateriaHorario());
+		
+		view.addObject("alumnoMateriasCaliFirmado", alumnoMateriasCali);
+		view.setViewName("calificar-materia");
+	
+		return view;
+		
+	}
 	
 	
 	/**
@@ -102,13 +130,32 @@ public class MateriasProfesorController {
 	 * @param isbn
 	 * @return
 	 *
-	@GetMapping("/listar/{isbn}")
-	public ModelAndView listarDetalleGrupo(
-			@PathVariable(name="isbn") String isbn
-			) {
-		System.out.println("Dentro de listarDetalleGrupo()");
-		System.out.println("ISBN a buscar: " + isbn);
+	*/
+	/*
+	@GetMapping("/listar/calificar")
+	public ModelAndView listarDetalleGrupo() {
+		ModelAndView view = new ModelAndView();
+		List<MateriasHorarios> profesorMaterias = profesoresServicio.listarMateriasProfesor(profesor.getIdProf());	
+        
+		view.addObject("profesorMateriasFirmado", profesorMaterias);
+		view.setViewName("materias-profesor");
+		return view;
+}
+	
+
+	@RequestMapping(value="/materiaRegistrada", method=RequestMethod.POST)
+	public ModelAndView grupoCambiado(@Valid @ModelAttribute("altaMateriaFrm") AltaMateriaForm formAltaMateria,
+			@ModelAttribute("usuarioFirmado") Profesores profesor, BindingResult resultado, ModelAndView view) {
+		if(resultado.hasErrors()) {
+			view.setViewName("registro-materia");
+			return view;
+		}
 		
-		return null;
+		materiasHorariosServicio.guardarMateriaHorario(formAltaMateria, profesor);
+		
+		view.setViewName("home-profesor");
+	
+		return view;
+		
 	}*/
 }

@@ -20,6 +20,7 @@
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
             <li><a href="#">Información de la escuela </a></li>
             <li><a href="#">Información personal</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
           </ul>
         </td>
         <td><!-- Desplegar tabla de alumnos --></td>

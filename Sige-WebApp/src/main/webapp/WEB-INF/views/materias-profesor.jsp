@@ -43,6 +43,12 @@
 				<td>${profesorMateriaFirmado.materia.laboratorio}</td>
 				<td>${profesorMateriaFirmado.horario}</td>
 				<td>${profesorMateriaFirmado.dias}</td>
+				<td>
+				<form:form method="POST" action="calificar" modelAttribute="formCaliMateria">
+				<td><form:radiobutton path="idMateriaHorario" value="${profesorMateriaFirmado.idMateriasHorarios}"/></td>
+				<input type="submit" value="Registrar" />
+				</form:form>
+				</td>
 			</tr>
 		</c:forEach>
 		</table>

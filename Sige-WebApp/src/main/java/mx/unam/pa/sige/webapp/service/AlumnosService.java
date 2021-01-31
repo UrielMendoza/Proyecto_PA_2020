@@ -16,7 +16,7 @@ public interface AlumnosService {
 	
 	public Alumnos loginAlumno(LoginForm formLogin);
 	
-	public void eliminar(Alumnos alumno);
+	public void eliminar(Integer idAlumno);
 	
 	public  void editar(Alumnos alumno);
 	
