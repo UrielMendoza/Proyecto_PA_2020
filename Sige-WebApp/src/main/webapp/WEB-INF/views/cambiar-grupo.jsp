@@ -35,7 +35,7 @@
 			<tr>
 				<td colspan="2"><input type="submit" value="Cambiar" /></td>
 			</tr>
-		</table>
+		
 	</form:form>
 </body>
 </html>

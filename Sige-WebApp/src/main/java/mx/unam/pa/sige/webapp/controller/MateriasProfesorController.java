@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +20,9 @@ import org.springframework.web.servlet.ModelAndView;
 import mx.unam.pa.sige.webapp.service.ProfesoresService;
 import mx.unam.pa.sige.webapp.service.AlumnoMateriasService;
 import mx.unam.pa.sige.webapp.forms.AltaMateriaForm;
+import mx.unam.pa.sige.webapp.forms.CambioGrupoForm;
 import mx.unam.pa.sige.webapp.forms.MateriaCalificarForm;
+import mx.unam.pa.sige.webapp.forms.MateriaCalificadaForm;
 import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.MateriasHorarios;
 import mx.unam.pa.sige.webapp.model.Profesores;
@@ -51,7 +54,6 @@ import mx.unam.pa.sige.webapp.model.Profesores;
  *
  */
 @Controller
-@RequestMapping("/materiasProfesor")
 @SessionAttributes(names = {"usuarioFirmado","profesorMateriasFirmado"})
 public class MateriasProfesorController {
 	@Autowired
@@ -68,30 +70,60 @@ public class MateriasProfesorController {
 	 * @return
 	 */
 	
-	@GetMapping(value="/listar")
+	@GetMapping(value="/materiasProfesor")
     public ModelAndView listar(@ModelAttribute("usuarioFirmado") Profesores profesor){
-		ModelAndView view = new ModelAndView();
+		
+		ModelAndView view = new ModelAndView("materias-profesor","caliMateriaForm",new MateriaCalificarForm());
+		
 		List<MateriasHorarios> profesorMaterias = profesoresServicio.listarMateriasProfesor(profesor.getIdProf());	
         
 		view.addObject("profesorMateriasFirmado", profesorMaterias);
-		view.setViewName("materias-profesor");
+		//view.setViewName("materias-profesor");
 		return view;
     }
 	
 	
-	@RequestMapping(value="/calificar", method=RequestMethod.POST)
-	public ModelAndView grupoCambiado(@Valid @ModelAttribute("caliMateriaForm") MateriaCalificarForm formCaliMateria,
-			@ModelAttribute("usuarioFirmado") Profesores profesor,@ModelAttribute("profesorMateriasFirmado") MateriasHorarios profesorMaterias,
+	@RequestMapping(value="/materiaCalificar", method=RequestMethod.POST)
+	public ModelAndView materiaCalificar(@Valid @ModelAttribute("caliMateriaForm") MateriaCalificarForm formCaliMateria,
+			@ModelAttribute("usuarioFirmado") Profesores profesor,
+			@RequestParam("idMateriaHorario") Integer idMateriaHorario, 
+			@ModelAttribute("profesorMateriasFirmado") MateriasHorarios profesorMaterias,
 			BindingResult resultado, ModelAndView view) {
 		if(resultado.hasErrors()) {
 			view.setViewName("materias-profesor");
 			return view;
 		}
 		
-		List<AlumnoMaterias> alumnoMateriasCali = alumnoMateriasServicio.listarAllAlumnosMateriasByIdMateriasHorarios(formCaliMateria.getIdMateriaHorario());
+		List<AlumnoMaterias> alumnoMateriasCali = alumnoMateriasServicio.listarAllAlumnosMateriasByIdMateriasHorarios(idMateriaHorario);
 		
 		view.addObject("alumnoMateriasCaliFirmado", alumnoMateriasCali);
 		view.setViewName("calificar-materia");
+	
+		return view;
+		
+	}
+	
+	@RequestMapping(value="/materiaCalificada", method=RequestMethod.POST)
+	public ModelAndView materiaCalificada(@Valid @ModelAttribute("caliMateriaForm") MateriaCalificarForm formCalificadaMateria,
+			@ModelAttribute("usuarioFirmado") Profesores profesor,
+			@RequestParam("idAlumnoMaterias") Integer idAlumnoMaterias, 
+			@RequestParam("calificacion") float calificacion, 
+			@ModelAttribute("profesorMateriasFirmado") MateriasHorarios profesorMaterias,
+			BindingResult resultado, ModelAndView view) {
+		
+		if(resultado.hasErrors()) {
+			view.setViewName("calificar-materia");
+			return view;
+		}
+		
+		AlumnoMaterias alumnoCal = alumnoMateriasServicio.obtenerAlumnoMaterias(idAlumnoMaterias);
+		
+		alumnoCal.setCalificacion(calificacion);
+		
+		alumnoMateriasServicio.editar(alumnoCal);
+		
+		//view.addObject("alumnoMateriasCaliFirmado", alumnoMateriasCali);
+		view.setViewName("home-profesor");
 	
 		return view;
 		
