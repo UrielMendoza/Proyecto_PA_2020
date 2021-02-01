@@ -43,11 +43,13 @@
 				<td>${profesorMateriaFirmado.materia.laboratorio}</td>
 				<td>${profesorMateriaFirmado.horario}</td>
 				<td>${profesorMateriaFirmado.dias}</td>
+				
+				
 				<td>
-				<form:form method="POST" action="calificar" modelAttribute="formCaliMateria">
-				<td><form:radiobutton path="idMateriaHorario" value="${profesorMateriaFirmado.idMateriasHorarios}"/></td>
-				<input type="submit" value="Registrar" />
-				</form:form>
+				<ul style="list-style-type:none">
+           		 <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor/listar">Calificar</a></li>
+            
+          		</ul>
 				</td>
 			</tr>
 		</c:forEach>
