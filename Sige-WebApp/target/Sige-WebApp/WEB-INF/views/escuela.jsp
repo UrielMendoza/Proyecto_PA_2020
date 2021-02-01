@@ -5,7 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Materias Alumno</title>
+<title>Informacion Alumno</title>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
 </head>
 <body>
 	<!--<p>${usuarioFirmado.grupo},</p>-->
@@ -19,39 +25,48 @@
           <ul style="list-style-type:none">
             <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
           </ul>
-        </td>        
+        </td>
+        <td><!-- Desplegar tabla de alumnos --></td>
       </tr>
     </table>
-    <p>Grupo inscrito de ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
-	<p>Grupo: ${usuarioFirmado.grupo.idGrupo}</p>
-	<p>Grado: ${usuarioFirmado.grupo.grado}</p>
+    <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
     <table>
 			<thead>
-				<tr>
-					<td>idMateriaHorarios</td>
-					<td>materia</td>
-					<td>profesor</td>
-					<td>salon</td>
-					<td>laboratorio</td>
-					<td>horario</td>
-					<td>dias</td>
-				</tr>
+					<tr>
+					<td>Num de Estudiantes</td>
+					<td>${contadores[0]}</td>
+					</tr>
+					
+					<tr>
+					<td>Num de Profesores</td>
+					<td>${contadores[1]}</td>
+					</tr>
+					
+					<tr>
+					<td>Num de Materias</td>
+					<td>${contadores[3]}</td>
+					</tr>
+					
+					<tr>
+					<td>Num de Grupos</td>
+					<td>${contadores[2]}</td>
+					</tr>
+					
+					<tr>
+					<td>Num de Salones</td>
+					<td>${contadores[4]}</td>
+					</tr>
+				
+			
+				
+					
 			</thead>
-		<c:forEach var="grupoAlumno" items="${gruposAlumno}">
-			<tr>
-				<td>${grupoAlumno.idMateriasHorarios}</td>
-				<td>${grupoAlumno.materia.nombre}</td>
-				<td>${grupoAlumno.profesor.nombreProf} ${grupoAlumno.profesor.apellidoProf}</td>
-				<td>${grupoAlumno.salon.edificio}${grupoAlumno.salon.idSalon}</td>
-				<td>${grupoAlumno.materia.laboratorio}</td>
-				<td>${grupoAlumno.horario}</td>
-				<td>${grupoAlumno.dias}</td>
-			</tr>
-		</c:forEach>
+		
+			
+		
 		</table>
-		<a href="http://localhost:8080/Sige-WebApp/spring/cambiarGrupo"><button>Cambiar grupo</button></a>
 </body>
 </html>

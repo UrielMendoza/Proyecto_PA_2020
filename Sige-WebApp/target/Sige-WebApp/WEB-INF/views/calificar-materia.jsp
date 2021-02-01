@@ -7,19 +7,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Calificar Materias</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
 </head>
 <body>
 
     <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf}</p>
     
+    
     <table>
-			<thead>
+    <thead>
+      <tr>
+        <td>
+          <ul style="list-style-type:none">
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor">Materias impartidas</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listarp">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
+          </ul>
+        </td> 
+      </tr>
+    </table>
+    
+    <table>
+    <thead>  
+			
 				<tr>
 					<td>numCuenta</td>
-					<td>alumno</td>
-					<td>materia</td>
-					<td>grupo</td>
-					<td>estatus</td>
+					<td>Alumno</td>
+					<td>Materia</td>
+					<td>Grupo</td>
+					<td>Estatus</td>
+					<td>Calificacion Actual</td>
+					<td>Permitir</td>
+					<td></td>
+					<td>Nueva Calificacion</td>
+					
 				</tr>
 			</thead>
 
@@ -31,6 +56,7 @@
 				<td>${alumnoMateriaCaliFirmado.materiaHorario.materia.nombre}</td>
 				<td>${alumnoMateriaCaliFirmado.materiaHorario.grupo.idGrupo}</td>
 				<td>${alumnoMateriaCaliFirmado.alumno.estatus}</td>
+				<td>${alumnoMateriaCaliFirmado.calificacion}</td>
 				<td><form:radiobutton path="idAlumnoMaterias" value="${alumnoMateriaCaliFirmado.idAlumnoMaterias}"/></td>
 				<td><form:label path="calificacion">Calificacion</form:label></td>
 				<td><form:input path="calificacion" /></td>
@@ -41,6 +67,6 @@
 		</c:forEach>
 
 		</table>
-
+		
 </body>
 </html>

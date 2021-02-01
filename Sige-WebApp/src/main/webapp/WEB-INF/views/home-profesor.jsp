@@ -13,11 +13,11 @@
         <td>
           <ul style="list-style-type:none">
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor">Materias impartidas</a></li>
-            <li><a href="#">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listarp">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
           </ul>
         </td>
-        <td></td>
+        
       </tr>
     </table>
 </body>

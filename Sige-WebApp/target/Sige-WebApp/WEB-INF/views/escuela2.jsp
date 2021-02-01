@@ -15,66 +15,47 @@ table, th, td {
 </head>
 <body>
 	
-    <table>
+	<table>
       <tr>
         <td>
           <ul style="list-style-type:none">
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor">Materias impartidas</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listarp">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
           </ul>
         </td>
-        <td></td>
+        <td><!-- Desplegar tabla de alumnos --></td>
       </tr>
     </table>
     <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf},</p>
     <table>
 			<thead>
 					<tr>
-					<td>Num Cuenta</td>
-					<td>${profesor.idProf}</td>
+					<td>Num de Estudiantes</td>
+					<td>${contadores[0]}</td>
 					</tr>
 					
 					<tr>
-					<td>Nombre</td>
-					<td>${profesor.nombreProf}</td>
+					<td>Num de Profesores</td>
+					<td>${contadores[1]}</td>
 					</tr>
 					
 					<tr>
-					<td>Apellido</td>
-					<td>${profesor.apellidoProf}</td>
+					<td>Num de Materias</td>
+					<td>${contadores[3]}</td>
 					</tr>
 					
 					<tr>
-					<td>Fecha de nacimiento </td>
-					<td>${profesor.fechaNac}</td>
+					<td>Num de Grupos</td>
+					<td>${contadores[2]}</td>
 					</tr>
 					
 					<tr>
-					<td>Sexo</td>
-					<td>${profesor.sexoProf}</td>
+					<td>Num de Salones</td>
+					<td>${contadores[4]}</td>
 					</tr>
-					
-					
-					<tr>
-					<td>Correo</td>
-					<td>${profesor.correoProf}</td>
-					</tr>
-					
-					<tr>
-					<td>Telefono</td>
-					<td>${profesor.telefonoProf}</td>
-					</tr>
-					
-					<tr>
-					<td>Direccion</td>
-					<td>${profesor.direccionProf}</td>
-					</tr>
-					
-					<tr>
-					<td>CP</td>
-					<td>${profesor.cpProf}</td>
-					</tr>
+				
+			
+				
 					
 			</thead>
 		
