@@ -36,7 +36,7 @@ table, th, td {
 
       </tr>
     </table>
-    <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
+    <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
     <table>
 			<thead>
 					<tr>

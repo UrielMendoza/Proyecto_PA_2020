@@ -29,7 +29,7 @@ table, th, td {
         </td>        
       </tr>
     </table>
-    <p>Materias del profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf},</p>
+    <p>Materias del profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf}</p>
     <table>
 			<thead>
 				<tr>

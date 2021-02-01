@@ -34,7 +34,7 @@ table, th, td {
         </td>        
       </tr>
     </table>
-    <p>Materias de ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
+    <p>Materias de ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
     <table>
 			<thead>
 				<tr>

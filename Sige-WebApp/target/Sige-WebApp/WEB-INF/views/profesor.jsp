@@ -28,7 +28,7 @@ table, th, td {
         </td>
       </tr>
     </table>
-    <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf},</p>
+    <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf}</p>
     <table>
 			<thead>
 					<tr>

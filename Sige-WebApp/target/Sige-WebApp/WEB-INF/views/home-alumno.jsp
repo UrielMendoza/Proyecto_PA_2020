@@ -30,6 +30,6 @@
         <td><!-- Desplegar tabla de alumnos --></td>
       </tr>
     </table>
-    <p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
+    <p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
 </body>
 </html>

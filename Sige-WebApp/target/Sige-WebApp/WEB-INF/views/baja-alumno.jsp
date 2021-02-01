@@ -13,7 +13,7 @@
 	<div style="position: relative;">
 	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
 	</div>
-	<p>Dar de baja ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>	
+	<p>Dar de baja ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>	
 	<form:form method="POST" action="alumnoBaja">	
 		<tr>
 			<td colspan="2"><input type="submit" value="Baja" /></td>
