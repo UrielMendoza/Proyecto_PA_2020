@@ -121,7 +121,7 @@ public class AlumnoMateriasDAOImpl implements AlumnoMateriasDAO{
 			String idMateriasHorarios = String.valueOf(materiaHorario.getIdMateriasHorarios());			
 			
 			session.createNativeQuery("INSERT INTO alumnomaterias (id_numCuenta1,id_materiasHorarios1,calificacion) VALUES (:id_numCuenta1,:id_materiasHorarios1,:calificacion)")		
-			.setParameter("id_numCuensta1", idAlumno)
+			.setParameter("id_numCuenta1", idAlumno)
 			.setParameter("id_materiasHorarios1", idMateriasHorarios)
 			.setParameter("calificacion", "-9999.0")
 			.executeUpdate();
