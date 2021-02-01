@@ -43,10 +43,10 @@ public class AlumnoMaterias {
         this.idAlumnoMaterias = id_alumnoMaterias;
     }
     
-    public AlumnoMaterias(Alumnos alumno, MateriasHorarios materiaHorario) {
+    public AlumnoMaterias(Alumnos alumno, MateriasHorarios materiaHorario, float calificacion) {
         this.alumno = alumno;
         this.materiaHorario = materiaHorario;
-        this.calificacion = -9999.0f;
+        this.calificacion = calificacion;
     }
 
     public Integer getIdAlumnoMaterias() {

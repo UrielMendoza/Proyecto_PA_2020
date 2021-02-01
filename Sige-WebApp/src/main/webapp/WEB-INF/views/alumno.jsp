@@ -8,7 +8,6 @@
 <title>Informacion Alumno</title>
 
 <style>
-
 table, th, td {
   border: 1px solid black;
 }
@@ -27,8 +26,11 @@ table, th, td {
             <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
             <li><a href="#">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
           </ul>
-        </td>        
+        </td>
+        <td><!-- Desplegar tabla de alumnos --></td>
       </tr>
     </table>
     <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>

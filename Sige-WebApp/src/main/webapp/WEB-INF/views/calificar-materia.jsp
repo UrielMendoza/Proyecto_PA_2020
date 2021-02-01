@@ -22,8 +22,9 @@
 					<td>estatus</td>
 				</tr>
 			</thead>
-		<form:form method="POST" action="materiaCalificada" modelAttribute="caliMateriaForm">
+
 		<c:forEach var="alumnoMateriaCaliFirmado" items="${alumnoMateriasCaliFirmado}">
+				<form:form method="POST" action="materiaCalificada" modelAttribute="caliMateriaForm">
 			<tr>
 				<td>${alumnoMateriaCaliFirmado.alumno.idAlumno}</td>
 				<td>${alumnoMateriaCaliFirmado.alumno.nombre} ${alumnoMateriaCaliFirmado.alumno.apellido}</td>
@@ -36,8 +37,9 @@
 				<td><form:errors path="calificacion" cssClass="error" /></td>
 				<td colspan="2"><input type="submit" value="Calificar" /></td>
 			</tr>
+					</form:form>
 		</c:forEach>
-		</form:form>
+
 		</table>
 
 </body>
