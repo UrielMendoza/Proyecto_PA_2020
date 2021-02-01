@@ -25,7 +25,7 @@ table, th, td {
           <ul style="list-style-type:none">
             <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
-            <li><a href="#">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
           </ul>
@@ -111,5 +111,6 @@ table, th, td {
 			
 		
 		</table>
+		<a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a>
 </body>
 </html>

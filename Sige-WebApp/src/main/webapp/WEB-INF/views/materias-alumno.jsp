@@ -60,5 +60,6 @@
 			</tr>
 		</c:forEach>
 		</table>
+		<a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a>
 </body>
 </html>

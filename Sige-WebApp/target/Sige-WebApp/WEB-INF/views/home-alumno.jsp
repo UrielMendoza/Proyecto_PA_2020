@@ -21,6 +21,7 @@
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
+              <li><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a></li>
           </ul>
         </td>
         <td><!-- Desplegar tabla de alumnos --></td>
