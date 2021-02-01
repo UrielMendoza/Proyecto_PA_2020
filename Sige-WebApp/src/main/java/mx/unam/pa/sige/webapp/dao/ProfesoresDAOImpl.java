@@ -91,8 +91,21 @@ public class ProfesoresDAOImpl implements ProfesoresDAO {
 	}
 	
 	@Override
-	public void delete(Profesores profesor) {
-		sessionFactory.getCurrentSession().delete(profesor);
+	public void delete(String idProfesor) {
+		Session session = sessionFactory.getCurrentSession();
+		//session.remove(materiasHorarios);
+		
+		// Aqui falta eliminar a las materias de alumnosMaterias de ese profesor, pero eso afecta al historial
+		// del alumno
+		
+		session.createNativeQuery("delete from materiasHorarios where id_numCuentaProf1 = :id")
+		  .setParameter("id", idProfesor)
+		  .executeUpdate();
+		
+		session.createNativeQuery("delete from profesores where id_numCuentaProf = :id")
+		  .setParameter("id", idProfesor)
+		  .executeUpdate();
+		
 	}
 	
 	@Override

@@ -14,6 +14,9 @@ table, th, td {
 </style>
 </head>
 <body>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
 	<!--<p>${usuarioFirmado.grupo},</p>-->
 	<%--
 	<p>&iquest;Qu&eacute; deseas hacer?</p>
@@ -27,10 +30,10 @@ table, th, td {
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlumno">Darme de baja</a></li>
           </ul>
         </td>
-        <td><!-- Desplegar tabla de alumnos --></td>
+
       </tr>
     </table>
     <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
@@ -63,7 +66,7 @@ table, th, td {
 					
 					<tr>
 					<td>Grupo</td>
-					<td>${alumnos.grupo}</td>
+					<td>${alumnos.grupo.idGrupo}</td>
 					</tr>
 					
 					<tr>
@@ -111,6 +114,5 @@ table, th, td {
 			
 		
 		</table>
-		<a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a>
 </body>
 </html>

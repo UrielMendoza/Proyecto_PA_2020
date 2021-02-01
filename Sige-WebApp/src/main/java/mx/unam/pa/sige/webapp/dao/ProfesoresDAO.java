@@ -16,7 +16,7 @@ public interface ProfesoresDAO {
 	
 	public Profesores loginProfesor(Profesores Profesor);
 	
-	public void delete(Profesores profesor);
+	public void delete(String idProfesor);
 	
 	public void edit(Profesores profesor);
 	

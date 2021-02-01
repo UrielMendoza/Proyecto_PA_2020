@@ -56,4 +56,9 @@ public class AlumnoMateriasServiceImpl implements AlumnoMateriasService{
 		return dao.getAllAlumnosMateriasByIdMateriasHorarios(idMateriasHorarios);
 	};
 	
+	@Override
+	public float obtenerPromedio(List<AlumnoMaterias> alumnoMaterias) {
+		return dao.getPromedio(alumnoMaterias);
+	};
+	
 }

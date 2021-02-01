@@ -13,43 +13,27 @@ table, th, td {
 }
 </style>
 </head>
-<body>
+<body>	
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
 
     <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf}</p>
     
-    
     <table>
-    <thead>
-      <tr>
-        <td>
-          <ul style="list-style-type:none">
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor">Materias impartidas</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listarp">Información de la escuela </a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
-          </ul>
-        </td> 
-      </tr>
-    </table>
-    
-    <table>
-    <thead>  
-			
+			<thead>
 				<tr>
-					<td>numCuenta</td>
+					<td>Num. cuenta</td>
 					<td>Alumno</td>
 					<td>Materia</td>
 					<td>Grupo</td>
 					<td>Estatus</td>
 					<td>Calificacion Actual</td>
-					<td>Permitir</td>
-					<td></td>
-					<td>Nueva Calificacion</td>
-					
 				</tr>
 			</thead>
 
 		<c:forEach var="alumnoMateriaCaliFirmado" items="${alumnoMateriasCaliFirmado}">
-				<form:form method="POST" action="materiaCalificada" modelAttribute="caliMateriaForm">
+		<form:form method="POST" action="materiaCalificada" modelAttribute="caliMateriaForm">
 			<tr>
 				<td>${alumnoMateriaCaliFirmado.alumno.idAlumno}</td>
 				<td>${alumnoMateriaCaliFirmado.alumno.nombre} ${alumnoMateriaCaliFirmado.alumno.apellido}</td>
@@ -57,16 +41,19 @@ table, th, td {
 				<td>${alumnoMateriaCaliFirmado.materiaHorario.grupo.idGrupo}</td>
 				<td>${alumnoMateriaCaliFirmado.alumno.estatus}</td>
 				<td>${alumnoMateriaCaliFirmado.calificacion}</td>
+
 				<td><form:radiobutton path="idAlumnoMaterias" value="${alumnoMateriaCaliFirmado.idAlumnoMaterias}"/></td>
 				<td><form:label path="calificacion">Calificacion</form:label></td>
 				<td><form:input path="calificacion" /></td>
 				<td><form:errors path="calificacion" cssClass="error" /></td>
 				<td colspan="2"><input type="submit" value="Calificar" /></td>
+		
 			</tr>
-					</form:form>
+		</form:form>
 		</c:forEach>
 
+
 		</table>
-		<a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a>
+
 </body>
 </html>

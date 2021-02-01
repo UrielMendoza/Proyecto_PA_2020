@@ -7,7 +7,9 @@
 <title>Home de usuario</title>
 </head>
 <body>
-	<p>¡Bienvenido ${usuarioFirmado.nombreProf}</p>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
     <table>
       <tr>
         <td>
@@ -15,11 +17,11 @@
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor">Materias impartidas</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listarp">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
-             <li><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a></li>
           </ul>
         </td>
-        
+        <td></td>
       </tr>
     </table>
+    <p>¡Bienvenido ${usuarioFirmado.nombreProf}</p>
 </body>
 </html>

@@ -8,9 +8,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Baja materia</title>
 <link href="../../css/estilo.css" rel="stylesheet">
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
 </head>
 <body>
-	<p>Materias del profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf},</p>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
+	<p>Materias del profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf}</p>
 	<form:form method="POST" action="materiaBaja" modelAttribute="bajaMateriaFrm">
 		 <table>
 			<thead>

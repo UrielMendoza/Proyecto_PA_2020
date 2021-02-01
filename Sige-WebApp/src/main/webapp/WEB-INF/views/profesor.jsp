@@ -14,7 +14,9 @@ table, th, td {
 </style>
 </head>
 <body>
-	
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>	
     <table>
       <tr>
         <td>
@@ -24,7 +26,6 @@ table, th, td {
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
           </ul>
         </td>
-        <td></td>
       </tr>
     </table>
     <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf},</p>
@@ -81,6 +82,5 @@ table, th, td {
 			
 		
 		</table>
-		 <a href="http://localhost:8080/Sige-WebApp/spring/login"><button>CERRAR SESION </button></a>
 </body>
 </html>

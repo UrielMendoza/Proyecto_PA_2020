@@ -24,5 +24,7 @@ public interface AlumnoMateriasDAO {
 	
 	public List<AlumnoMaterias> getAllAlumnosMateriasByIdMateriasHorarios(Integer idMateriasHorarios);
 	
+	public float getPromedio(List<AlumnoMaterias> alumnoMaterias);
+	
 	
 }

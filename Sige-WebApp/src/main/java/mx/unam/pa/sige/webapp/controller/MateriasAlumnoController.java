@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import mx.unam.pa.sige.webapp.service.AlumnosService;
+import mx.unam.pa.sige.webapp.service.AlumnoMateriasService;
 import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.Alumnos;
 
@@ -49,6 +50,9 @@ public class MateriasAlumnoController {
 	@Autowired
 	private AlumnosService alumnosServicio;
 	
+	@Autowired
+	private AlumnoMateriasService alumnosMateriasServicio;
+	
 	/**
 	 * Listado de todos los libros. 
 	 * Para acceder a esta funcionalidad y manteniendo las suposiciones descritas 
@@ -61,9 +65,16 @@ public class MateriasAlumnoController {
 	@GetMapping(value="/listar")
     public ModelAndView listar(@ModelAttribute("usuarioFirmado") Alumnos alumno){
 		ModelAndView view = new ModelAndView();
-		List<AlumnoMaterias> alumnoMaterias = alumnosServicio.listarMateriasAlumno(alumno.getIdAlumno());	
+		List<AlumnoMaterias> alumnoMaterias = alumnosServicio.listarMateriasAlumno(alumno.getIdAlumno());
+		
+		float promedio = alumnosMateriasServicio.obtenerPromedio(alumnoMaterias);
+		
+		alumno.setPromedio(promedio);
+		
+		alumnosServicio.editar(alumno);
         
 		view.addObject("alumnoMaterias", alumnoMaterias);
+		view.addObject("promedio", promedio);
 		view.setViewName("materias-alumno");
 		return view;
     }

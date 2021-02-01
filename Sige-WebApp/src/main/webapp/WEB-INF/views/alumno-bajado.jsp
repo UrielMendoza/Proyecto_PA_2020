@@ -10,6 +10,9 @@
 <link href="../../css/estilo.css" rel="stylesheet">
 </head>
 <body>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
 	<p>Se dio de baja a ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
 		
 	<a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Regresar</button></a>
