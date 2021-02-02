@@ -14,20 +14,21 @@ table, th, td {
 </style>
 </head>
 <body>
-	
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>	
     <table>
       <tr>
         <td>
           <ul style="list-style-type:none">
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasProfesor">Materias impartidas</a></li>
-            <li><a href="#">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listarp">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/listar">Información personal</a></li>
           </ul>
         </td>
-        <td></td>
       </tr>
     </table>
-    <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf},</p>
+    <p>Profesor ${usuarioFirmado.nombreProf} ${usuarioFirmado.apellidoProf}</p>
     <table>
 			<thead>
 					<tr>

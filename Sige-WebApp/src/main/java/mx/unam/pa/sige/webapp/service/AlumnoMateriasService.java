@@ -22,4 +22,6 @@ public interface AlumnoMateriasService {
 	public void guardarAlumnosInscritos(List<MateriasHorarios> materiasHorarios, Alumnos alumno);
 	
 	public List<AlumnoMaterias> listarAllAlumnosMateriasByIdMateriasHorarios(Integer idMateriasHorarios);
+	
+	public float obtenerPromedio(List<AlumnoMaterias> alumnoMaterias);
 }

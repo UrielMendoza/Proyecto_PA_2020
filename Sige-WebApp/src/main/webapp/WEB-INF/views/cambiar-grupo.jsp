@@ -9,7 +9,10 @@
 <title>Cambiar grupo</title>
 <link href="../../css/estilo.css" rel="stylesheet">
 </head>
-<body>	
+<body>		
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
     <p>Grupo inscrito de ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
 	<p>Grupo: ${usuarioFirmado.grupo.idGrupo}</p>
 	<p>Grado: ${usuarioFirmado.grupo.grado}</p>

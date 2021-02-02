@@ -10,6 +10,9 @@
 <link href="../../css/estilo.css" rel="stylesheet">
 </head>
 <body>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Inicio</button></a></div>
+	</div>	
 	<h2>Registro para profesores y alumnos</h2>
 	<form:form method="POST" action="registroUsuario" modelAttribute="formUserRegistro">
 		<%-- Si hay errores en la validación de la forma, se mostrarán en esta etiqueta --%>

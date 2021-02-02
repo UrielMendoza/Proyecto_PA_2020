@@ -14,6 +14,9 @@ table, th, td {
 </style>
 </head>
 <body>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
 	<!--<p>${usuarioFirmado.grupo},</p>-->
 	<%--
 	<p>&iquest;Qu&eacute; deseas hacer?</p>
@@ -25,15 +28,15 @@ table, th, td {
           <ul style="list-style-type:none">
             <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
-            <li><a href="#">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
             <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno">Darme de baja</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlumno">Darme de baja</a></li>
           </ul>
         </td>
-        <td><!-- Desplegar tabla de alumnos --></td>
+
       </tr>
     </table>
-    <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido},</p>
+    <p>Alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
     <table>
 			<thead>
 					<tr>
@@ -63,7 +66,11 @@ table, th, td {
 					
 					<tr>
 					<td>Grupo</td>
+<<<<<<< HEAD
 					<td>${usuarioFirmado.grupo.idGrupo}</td>
+=======
+					<td>${alumnos.grupo.idGrupo}</td>
+>>>>>>> 8dc009f3dda818512ae69b41aa304e5f15771c33
 					</tr>
 					
 					<tr>

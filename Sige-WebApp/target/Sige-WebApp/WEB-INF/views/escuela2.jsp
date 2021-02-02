@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Informacion Alumno</title>
+<title>Informacion Escuela</title>
 
 <style>
 table, th, td {
@@ -14,10 +14,8 @@ table, th, td {
 </style>
 </head>
 <body>
-	<div style="position: relative;">
-	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
-	</div>	
-    <table>
+	<div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	<table>
       <tr>
         <td>
           <ul style="list-style-type:none">
@@ -32,59 +30,33 @@ table, th, td {
     <table>
 			<thead>
 					<tr>
-					<td>Num Cuenta</td>
-					<td>${profesor.idProf}</td>
+					<td>Num de Estudiantes</td>
+					<td>${contadores[0]}</td>
 					</tr>
-					
+
 					<tr>
-					<td>Nombre</td>
-					<td>${profesor.nombreProf}</td>
+					<td>Num de Profesores</td>
+					<td>${contadores[1]}</td>
 					</tr>
-					
+
 					<tr>
-					<td>Apellido</td>
-					<td>${profesor.apellidoProf}</td>
+					<td>Num de Materias</td>
+					<td>${contadores[3]}</td>
 					</tr>
-					
+
 					<tr>
-					<td>Fecha de nacimiento </td>
-					<td>${profesor.fechaNac}</td>
+					<td>Num de Grupos</td>
+					<td>${contadores[2]}</td>
 					</tr>
-					
+
 					<tr>
-					<td>Sexo</td>
-					<td>${profesor.sexoProf}</td>
+					<td>Num de Salones</td>
+					<td>${contadores[4]}</td>
 					</tr>
-					
-					
-					<tr>
-					<td>Correo</td>
-					<td>${profesor.correoProf}</td>
-					</tr>
-					
-					<tr>
-					<td>Telefono</td>
-					<td>${profesor.telefonoProf}</td>
-					</tr>
-					
-					<tr>
-					<td>Direccion</td>
-					<td>${profesor.direccionProf}</td>
-					</tr>
-					
-					<tr>
-					<td>CP</td>
-					<td>${profesor.cpProf}</td>
-					</tr>
-					
-					<tr>
-						<td><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/editarProfesor"><button>Editar</button></a></td>
-					</tr>
-					
 			</thead>
-		
-			
-		
+
+
+
 		</table>
 </body>
-</html>
+</html> 

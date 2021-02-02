@@ -37,8 +37,8 @@ public class BajaAlumnoController {
 	@Autowired
 	private AlumnosService alumnoServicio;
 	
-	@GetMapping("/bajaAlmuno")
-	public ModelAndView mostrarFormatoBajaMateria(@ModelAttribute("usuarioFirmado") Alumnos alumno) {	
+	@GetMapping("/bajaAlumno")
+	public ModelAndView mostrarFormatoBajaAlumno(@ModelAttribute("usuarioFirmado") Alumnos alumno) {	
 		
 		ModelAndView view = new ModelAndView("baja-alumno");
 
@@ -46,7 +46,7 @@ public class BajaAlumnoController {
 	}
 	
 	@RequestMapping(value="/alumnoBaja", method=RequestMethod.POST)
-	public ModelAndView materiaBaja(@ModelAttribute("usuarioFirmado") Alumnos alumno, ModelAndView view) {
+	public ModelAndView alumnoBaja(@ModelAttribute("usuarioFirmado") Alumnos alumno, ModelAndView view) {
 		
 		//Alumnos alumnoEliminar = alumnoServicio.obtenerAlumnos(alumno.getIdAlumno());
 		

@@ -157,7 +157,24 @@ public class AlumnoMateriasDAOImpl implements AlumnoMateriasDAO{
 		//session.getTransaction().commit();
 		
 		return alumnoMaterias;		
+
+	};	
+	
+	@Override
+	public float getPromedio(List<AlumnoMaterias> alumnoMaterias) {
 		
+		float num = 0.0f;
+		float sum = 0.0f;
 		
+		for(AlumnoMaterias alumnoMateria : alumnoMaterias) {
+			
+			sum = sum + alumnoMateria.getCalificacion();
+			num = num + 1.0f;
+		}
+		
+		float promedio = sum/num;
+		
+		return promedio;
 	};
+		
 }

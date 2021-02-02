@@ -13,9 +13,16 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import mx.unam.pa.sige.webapp.service.AlumnosService;
-import mx.unam.pa.sige.webapp.service.AlumnoMateriasService;
+import mx.unam.pa.sige.webapp.service.GruposService;
+import mx.unam.pa.sige.webapp.service.MateriasService;
+import mx.unam.pa.sige.webapp.service.ProfesoresService;
+import mx.unam.pa.sige.webapp.service.SalonesService;
 import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.Alumnos;
+import mx.unam.pa.sige.webapp.model.Grupos;
+import mx.unam.pa.sige.webapp.model.Materias;
+import mx.unam.pa.sige.webapp.model.Profesores;
+import mx.unam.pa.sige.webapp.model.Salones;
 
 
 /**
@@ -44,14 +51,20 @@ import mx.unam.pa.sige.webapp.model.Alumnos;
  *
  */
 @Controller
-@RequestMapping("/materiasAlumno")
+@RequestMapping("/Escuela")
 @SessionAttributes("usuarioFirmado")
-public class MateriasAlumnoController {
+public class EscuelaController {
 	@Autowired
 	private AlumnosService alumnosServicio;
-	
 	@Autowired
-	private AlumnoMateriasService alumnosMateriasServicio;
+	private ProfesoresService profesoresServicio;
+	@Autowired
+	private GruposService grupoServicio;
+	@Autowired
+	private MateriasService materiasServicio;
+	@Autowired
+	private SalonesService salonesServicio;
+	
 	
 	/**
 	 * Listado de todos los libros. 
@@ -62,20 +75,53 @@ public class MateriasAlumnoController {
 	 * @return
 	 */
 	
-	@GetMapping(value="/listar")
-    public ModelAndView listar(@ModelAttribute("usuarioFirmado") Alumnos alumno){
+	@GetMapping(value="/listara")
+    public ModelAndView listara(@ModelAttribute("usuarioFirmado") Alumnos alumno){
+		int [] contadores=new int [6];
 		ModelAndView view = new ModelAndView();
-		List<AlumnoMaterias> alumnoMaterias = alumnosServicio.listarMateriasAlumno(alumno.getIdAlumno());
 		
-		float promedio = alumnosMateriasServicio.obtenerPromedio(alumnoMaterias);
+		List<Alumnos> Alu = alumnosServicio.listarAlumnos();	
+		contadores[0]=Alu.size();
 		
-		alumno.setPromedio(promedio);
+		List<Profesores> prof= profesoresServicio.listarProfesores();
+		contadores[1]=prof.size();
 		
-		alumnosServicio.editar(alumno);
-        
-		view.addObject("alumnoMaterias", alumnoMaterias);
-		view.addObject("promedio", promedio);
-		view.setViewName("materias-alumno");
+		List<Grupos> grup=grupoServicio.listarGrupos();
+		contadores[2]=grup.size();
+		
+		List<Materias> mat=materiasServicio.listarMaterias();
+		contadores[3]=mat.size();
+		
+		List<Salones> salo=salonesServicio.listarSalones();
+		contadores[4]=salo.size();
+		
+		view.addObject("contadores", contadores);
+		view.setViewName("escuela");
+		return view;
+    }
+	
+	@GetMapping(value="/listarp")
+    public ModelAndView listarp(@ModelAttribute("usuarioFirmado") Profesores profesores){
+		int [] contadores=new int [6];
+		ModelAndView view = new ModelAndView();
+		
+		List<Alumnos> Alu = alumnosServicio.listarAlumnos();	
+		contadores[0]=Alu.size();
+		
+		List<Profesores> prof= profesoresServicio.listarProfesores();
+		contadores[1]=prof.size();
+		
+		List<Grupos> grup=grupoServicio.listarGrupos();
+		contadores[2]=grup.size();
+		
+		List<Materias> mat=materiasServicio.listarMaterias();
+		contadores[3]=mat.size();
+		
+		List<Salones> salo=salonesServicio.listarSalones();
+		contadores[4]=salo.size();
+		
+		view.addObject("contadores", contadores);
+		view.setViewName("escuela2");
 		return view;
     }
 	

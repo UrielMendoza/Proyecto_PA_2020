@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <title>Home de usuario</title>
+<<<<<<< HEAD
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -88,5 +89,33 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
+=======
+</head>
+<body>
+	<div style="position: relative;">
+	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
+	</div>
+	<!--<p>${usuarioFirmado.grupo},</p>-->
+	<%--
+	<p>&iquest;Qu&eacute; deseas hacer?</p>
+	<p><a href="/web-biblioteca/spring/libro/listar">Buscar libros</a></p>
+	<p><a href="/web-biblioteca/spring/sesion/mostrar">Mostrar que hay en sesión</a></p> --%>
+	
+	<table>
+      <tr>
+        <td>
+          <ul style="list-style-type:none">
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
+            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlumno">Darme de baja</a></li>
+          </ul>
+        </td>
+        <td><!-- Desplegar tabla de alumnos --></td>
+      </tr>
+    </table>
+    <p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
+>>>>>>> 8dc009f3dda818512ae69b41aa304e5f15771c33
 </body>
 </html> 

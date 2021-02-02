@@ -22,7 +22,6 @@ public interface AlumnosDAO {
 	
 	public List<AlumnoMaterias> getAllMateriasAlumno(Integer idAlumno);
 	
-	public List<MateriasHorarios> getGrupoAlumno(Integer idGrupos);
-	
+	public List<MateriasHorarios> getGrupoAlumno(Integer idGrupos);	
 
 }

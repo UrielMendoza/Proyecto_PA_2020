@@ -14,7 +14,7 @@ public interface ProfesoresService {
 	
 	public Profesores loginProfesor(LoginForm formLogin);
 	
-	public void eliminar(Profesores profesor);
+	public void eliminar(Integer idProfesor);
 	
 	public void editar(Profesores profesor);
 	

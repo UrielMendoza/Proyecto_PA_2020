@@ -44,8 +44,11 @@ public class ProfesoresServiceImpl implements ProfesoresService{
 	}
 	
 	@Override
-	public void eliminar(Profesores profesor) {
-		dao.delete(profesor);
+	public void eliminar(Integer idProfesor) {
+		
+		String profesorBaja = String.valueOf(idProfesor);
+		
+		dao.delete(profesorBaja);
 	}
 	
 	@Override
