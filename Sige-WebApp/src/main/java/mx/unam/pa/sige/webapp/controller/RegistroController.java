@@ -46,7 +46,7 @@ public class RegistroController {
 	@GetMapping("/registro")
 	public ModelAndView mostrarFormaLogin() {
 		ModelAndView view = new ModelAndView("registro-usuario","formUserRegistro", new PasswordForm());
-		List<Grupos> gruposPrimero = gruposServicio.listarGruposByGrado(1);
+		List<Grupos> gruposPrimero = gruposServicio.listarGrupos();
 		List<MateriasHorarios> materiasHorariosPrimero = materiasHorariosServicio.listarMateriasHorariosByGrado(1);
 		view.addObject("gruposPrimeroFirmado", gruposPrimero);
 		view.addObject("materiasHorariosPrimeroFirmado", materiasHorariosPrimero);
