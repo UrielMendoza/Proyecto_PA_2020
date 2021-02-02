@@ -104,6 +104,13 @@ public class ProfesorController {
 		return view;
 	}
 	
+	@GetMapping(value="/homeProfesor")
+    public ModelAndView home(@ModelAttribute("usuarioFirmado") Profesores profesor){
+		ModelAndView view = new ModelAndView();
+		
+		view.setViewName("home-profesor");
+		return view;
+    }
 	
 	/**
 	@GetMapping("/MateriasAlumno")

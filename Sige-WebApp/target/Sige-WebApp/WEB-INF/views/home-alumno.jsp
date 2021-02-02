@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <title>Home de usuario</title>
-<<<<<<< HEAD
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,7 +18,10 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Página princial</a>
+  <a href="http://localhost:8080/Sige-WebApp/spring/Alumno/homeAlumno" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Página princial</a>
+  <a href="http://localhost:8080/Sige-WebApp/spring/login" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+    Cerrar Sesión
+  </a>
  </div>
 </div>
 
@@ -33,7 +35,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center">Mi perfil</h4>
-         <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <p class="w3-center"><img src="https://www.w3schools.com/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
          <p> ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
         </div>
@@ -47,11 +49,11 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           
           <a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar" style="text-decoration: none"><button class="w3-button w3-block w3-theme-l1 w3-left-align">Historial</button></a>
           
-          <a href="#" style="text-decoration: none"><button class="w3-button w3-block w3-theme-l1 w3-left-align">Información de la escuela </button></a>
+          <a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara" style="text-decoration: none"><button class="w3-button w3-block w3-theme-l1 w3-left-align">Información de la escuela </button></a>
           
           <a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar" style="text-decoration: none"><button class="w3-button w3-block w3-theme-l1 w3-left-align">Información personal </button></a>
           
-          <a href="http://localhost:8080/Sige-WebApp/spring/bajaAlmuno" style="text-decoration: none"><button class="w3-button w3-block w3-theme-l1 w3-left-align">Darme de baja </button></a>
+          <a href="http://localhost:8080/Sige-WebApp/spring/bajaAlumno" style="text-decoration: none"><button class="w3-button w3-block w3-theme-l1 w3-left-align">Darme de baja </button></a>
           
         </div>      
       </div>
@@ -67,9 +69,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <div class="w3-col m12">
           <div class="w3-card w3-round w3-white">
             <div class="w3-container w3-padding">
-              <h6 class="w3-opacity">Social Media template by w3.css</h6>
-              <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
-              <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+              <h2 class="w3-opacity">¡Bienvenido!</h2>
             </div>
           </div>
         </div>
@@ -89,33 +89,5 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
-=======
-</head>
-<body>
-	<div style="position: relative;">
-	    <div style="position: absolute; top: 0; right: 0;"><a href="http://localhost:8080/Sige-WebApp/spring/login"><button>Cerrar sesion</button></a></div>
-	</div>
-	<!--<p>${usuarioFirmado.grupo},</p>-->
-	<%--
-	<p>&iquest;Qu&eacute; deseas hacer?</p>
-	<p><a href="/web-biblioteca/spring/libro/listar">Buscar libros</a></p>
-	<p><a href="/web-biblioteca/spring/sesion/mostrar">Mostrar que hay en sesión</a></p> --%>
-	
-	<table>
-      <tr>
-        <td>
-          <ul style="list-style-type:none">
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/gruposAlumno/listar">Grupo inscrito</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/materiasAlumno/listar">Historial</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/Escuela/listara">Información de la escuela </a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/listar">Información personal</a></li>
-            <li><a href="http://localhost:8080/Sige-WebApp/spring/bajaAlumno">Darme de baja</a></li>
-          </ul>
-        </td>
-        <td><!-- Desplegar tabla de alumnos --></td>
-      </tr>
-    </table>
-    <p>Bienvenido alumno ${usuarioFirmado.nombre} ${usuarioFirmado.apellido}</p>
->>>>>>> 8dc009f3dda818512ae69b41aa304e5f15771c33
 </body>
 </html> 

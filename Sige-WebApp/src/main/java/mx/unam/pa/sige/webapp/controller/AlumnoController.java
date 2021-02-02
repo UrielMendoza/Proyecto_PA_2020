@@ -110,6 +110,13 @@ public class AlumnoController {
 		return view;
 	}
 	
+	@GetMapping(value="/homeAlumno")
+    public ModelAndView home(@ModelAttribute("usuarioFirmado") Alumnos alumno){
+		ModelAndView view = new ModelAndView();
+		
+		view.setViewName("home-alumno");
+		return view;
+    }
 	
 	
 	/**
