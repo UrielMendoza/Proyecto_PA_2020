@@ -2,19 +2,24 @@ package mx.unam.pa.sige.webapp.controller;
 
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 
 import mx.unam.pa.sige.webapp.service.ProfesoresService;
-
+import mx.unam.pa.sige.webapp.forms.EditForm;
+import mx.unam.pa.sige.webapp.model.Alumnos;
 import mx.unam.pa.sige.webapp.model.Profesores;
 
 
@@ -69,6 +74,35 @@ public class ProfesorController {
 		return view;
     }
 	
+	@RequestMapping(value="/editarProfesor")
+	public ModelAndView editar(@ModelAttribute("usuarioFirmado") Profesores profesor){
+		ModelAndView view = new ModelAndView("editar-info","formUserEdit", new EditForm());
+		
+		return view;
+    }
+	
+	@RequestMapping(value="/profesorEditado", method=RequestMethod.POST)
+	public ModelAndView editarProfesor(@Valid @ModelAttribute("formUserEdit") EditForm formEdit, 
+			@ModelAttribute("usuarioFirmado") Profesores profesor, BindingResult resultado,ModelAndView view) {
+		if(resultado.hasErrors()) {
+			view.setViewName("editar-info");
+		}
+		
+		profesor.setNombreProf(formEdit.getNombre());
+		profesor.setApellidoProf(formEdit.getApellido());
+		profesor.setFechaNac(formEdit.getFechaNac());
+		profesor.setDireccionProf(formEdit.getDireccion());
+		profesor.setCpProf(formEdit.getCp());
+		profesor.setCorreoProf(formEdit.getCorreo());
+		profesor.setTelefonoProf(formEdit.getTelefono());
+		
+		profesoresServicio.editar(profesor);
+		
+		view.addObject("usuarioFirmado", profesor);
+		view.setViewName("home-profesor");
+		
+		return view;
+	}
 	
 	
 	/**

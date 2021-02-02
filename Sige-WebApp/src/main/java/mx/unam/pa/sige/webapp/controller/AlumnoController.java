@@ -2,19 +2,30 @@ package mx.unam.pa.sige.webapp.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import mx.unam.pa.sige.webapp.service.AlumnosService;
+import mx.unam.pa.sige.webapp.forms.MateriaCalificarForm;
+import mx.unam.pa.sige.webapp.forms.PasswordForm;
+import mx.unam.pa.sige.webapp.forms.EditForm;
 import mx.unam.pa.sige.webapp.model.AlumnoMaterias;
 import mx.unam.pa.sige.webapp.model.Alumnos;
+import mx.unam.pa.sige.webapp.model.Grupos;
+import mx.unam.pa.sige.webapp.model.MateriasHorarios;
+import mx.unam.pa.sige.webapp.model.Profesores;
 
 
 /**
@@ -67,6 +78,37 @@ public class AlumnoController {
 		view.setViewName("alumno");
 		return view;
     }
+	
+	
+	@RequestMapping(value="/editarAlumno")
+	public ModelAndView editar(@ModelAttribute("usuarioFirmado") Alumnos alumno){
+		ModelAndView view = new ModelAndView("editar-info","formUserEdit", new EditForm());
+		
+		return view;
+    }
+	
+	@RequestMapping(value="/alumnoEditado", method=RequestMethod.POST)
+	public ModelAndView editarAlumno(@Valid @ModelAttribute("formUserEdit") EditForm formEdit, 
+			@ModelAttribute("usuarioFirmado") Alumnos alumno, BindingResult resultado,ModelAndView view) {
+		if(resultado.hasErrors()) {
+			view.setViewName("editar-info");
+		}
+		
+		alumno.setNombre(formEdit.getNombre());
+		alumno.setApellido(formEdit.getApellido());
+		alumno.setFechaNac(formEdit.getFechaNac());
+		alumno.setDireccion(formEdit.getDireccion());
+		alumno.setCp(formEdit.getCp());
+		alumno.setCorreo(formEdit.getCorreo());
+		alumno.setTelefono(formEdit.getTelefono());
+		
+		alumnosServicio.editar(alumno);
+		
+		view.addObject("usuarioFirmado", alumno);
+		view.setViewName("home-alumno");
+		
+		return view;
+	}
 	
 	
 	

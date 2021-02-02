@@ -76,6 +76,10 @@ table, th, td {
 					<td>${profesor.cpProf}</td>
 					</tr>
 					
+					<tr>
+						<td><a href="http://localhost:8080/Sige-WebApp/spring/Profesor/editarProfesor"><button>Editar</button></a></td>
+					</tr>
+					
 			</thead>
 		
 			

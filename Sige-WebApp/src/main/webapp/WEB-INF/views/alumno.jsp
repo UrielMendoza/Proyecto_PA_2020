@@ -63,7 +63,7 @@ table, th, td {
 					
 					<tr>
 					<td>Grupo</td>
-					<td>${alumnos.grupo}</td>
+					<td>${usuarioFirmado.grupo.idGrupo}</td>
 					</tr>
 					
 					<tr>
@@ -104,6 +104,10 @@ table, th, td {
 					<tr>
 					<td>CP</td>
 					<td>${alumnos.cp}</td>
+					</tr>
+					
+					<tr>
+						<td><a href="http://localhost:8080/Sige-WebApp/spring/Alumno/editarAlumno"><button>Editar</button></a></td>
 					</tr>
 					
 			</thead>
